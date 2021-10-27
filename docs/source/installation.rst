@@ -3,7 +3,10 @@
 Downloading and Installation
 ============================
 
-.. _nifs github repository:   https://github.com/nifs
+.. _Retrieve-dbstore-SDK:     https://w3.lhd.nifs.ac.jp/LABCOM_Documents.htm
+.. _LABCOM Download page:     https://w3.lhd.nifs.ac.jp/en/LABCOM_Download-e.htm
+.. _development repository:   https://github.com/munechika-koyo/nifs
+.. _libana2:                  http://kaiseki-dev.lhd.nifs.ac.jp/software/libana/index-e_new.htm
 .. _Python Setup Tools:       http://pypi.python.org/pypi/setuptools
 
 Prerequisites
@@ -19,8 +22,8 @@ The procedures of downloading and installation of which are discribed below at f
 
 Retrieve-dbstore-SDK
 ~~~~~~~~~~~~~~~~~~~~~
-Retrieve-dbstore-SDK is required for :mod:`nifs.rawdata` module to retrieve raw data from LABCOM server.
-This SDK is available from `LABCOM Download page <https://w3.lhd.nifs.ac.jp/en/LABCOM_Download-e.htm>`_
+`Retrieve-dbstore-SDK`_ is required for :py:mod:`nifs.rawdata` module to retrieve raw data from LABCOM server.
+This SDK is available from `LABCOM Download page`_
 or you can use ``wget`` command as follows:
 
 .. prompt:: bash $
@@ -39,16 +42,15 @@ Finaly, configure the following environmental values in .bashrc:
     source ~/.bashrc
 
 
-If you would rather download the SDK from website directly, you must choose
-:download:`CentOS8 SDK <https://w3.lhd.nifs.ac.jp/LABCOM_Softwares/Retrieve/retrieve-dbstore-22.0.0.sdk.el8.tar.gz>` 
+If you would rather download the SDK from website directly, you must choose CentOS8 SDK
 whatever linux distribution your PC depends on. And replace path names in the above code line with your own setting.
 
 
 
 libana2
 ~~~~~~~~
-`libana2 <http://kaiseki-dev.lhd.nifs.ac.jp/software/libana/index-e_new.htm>`_ is a client library
-to use Kaiseki Server and experimental database. :mod:`nifs.anadata` module requires this library.
+`libana2`_ is a client library
+to use Kaiseki Server and experimental database. :py:mod:`nifs.anadata` module requires this library.
 The source files are availabe from a git server. You can download it by ``git`` command:
 
 .. prompt:: bash $
@@ -87,7 +89,7 @@ Or you can put these files into $HOME directory directly.
 
 Installation
 ============
-NIFS package is available from our `development repository <>`_.
+NIFS package is available from our `development repository`_.
 Once you have the source files, locate the foloder containing setup.py and run:
 
 .. prompt:: bash $
@@ -96,6 +98,12 @@ Once you have the source files, locate the foloder containing setup.py and run:
 
 If all the required dependencies are present (numpy, psycopg2 and matplotlib),
 this should start the NIFS package compilation and installation process.
+
+.. warning:: 
+
+    Be sure to follow the above procedure of installing external C++ libraries before installing the NIFS package, otherwise, compilation errors
+    might occur.
+
 
 When developing NIFS package, it is usually preferred that the packages be installed in "develop" mode:
 
