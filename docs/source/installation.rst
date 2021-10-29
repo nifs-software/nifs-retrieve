@@ -5,7 +5,7 @@ Downloading and Installation
 
 .. _Retrieve-dbstore-SDK:     https://w3.lhd.nifs.ac.jp/LABCOM_Documents.htm
 .. _LABCOM Download page:     https://w3.lhd.nifs.ac.jp/en/LABCOM_Download-e.htm
-.. _development repository:   https://github.com/munechika-koyo/nifs
+.. _development repository:   https://github.com/nifs-lhd/nifs
 .. _libana2:                  http://kaiseki-dev.lhd.nifs.ac.jp/software/libana/index-e_new.htm
 .. _Python Setup Tools:       http://pypi.python.org/pypi/setuptools
 

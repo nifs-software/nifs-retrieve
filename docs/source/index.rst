@@ -28,6 +28,7 @@ labcom (raw data server) and kaiseki (analyzed) data server for python users.
    quickstart_guide
    references
 
+
 .. toctree::
    :maxdepth: 3
    :numbered:
@@ -35,7 +36,19 @@ labcom (raw data server) and kaiseki (analyzed) data server for python users.
    :name: demonstrations
 
    demonstrations/demonstrations
-   
+
+
+.. toctree::
+   :maxdepth: 3
+   :numbered:
+   :caption: API Reference
+   :name: apireferenceto
+
+   api_reference/anadata
+   api_reference/rawdata
+   api_reference/database
+   api_reference/expseq
+   api_reference/utilities
 
 Indices and tables
 ==================

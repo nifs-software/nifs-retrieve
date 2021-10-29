@@ -6,9 +6,6 @@ VER = "$Id: anadata.py,v 1.2 2020/07/15 02:59:48 yoshida Exp $"
 
 
 class _AnaDataInfo:
-    """
-
-    """
 
     def __init__(self, ary):
         (
@@ -26,11 +23,15 @@ class _AnaDataInfo:
 
 class AnaData(_AnaData):
     """
-    [クラス名] AnaData
-    <メンバー>
-    <説明>
-      解析データを保持するクラス
-      コードの大部分はベースクラスの _AnaData で実装している。
+    AnaData
+    =======
+
+    class to hold analysis data.
+    Main methods are implemeted by the base class _AnaData.
+
+    Attributes
+    -----------
+    retrieve
     """
 
     def __new__(cls, *av):
@@ -42,9 +43,7 @@ class AnaData(_AnaData):
 
     def getUserDict(self):
         """
-        [メソッド名]getUserDict
-        <説明>
-         コメントの キー = 値の部分を検索し、Dict 型に格納する
+        convert the comments to dict type valueables.
         """
         comment = self.getComment()
         rgx = re.compile("^\s*(.*)=(.*)\s*$")
@@ -58,19 +57,36 @@ class AnaData(_AnaData):
         return ret
 
     @classmethod
-    def search(cls, diagnostics, upper, lower, subno=1, userid=None, limit=100):
-        """
-        [メソッド名]search
-        <引数>
-          diagnostics (list): 計測名のリスト
-          upper (int):  ショット番号上限
-          lower (int):　ショット番号下限
-          subno (int):  サブショット番号
-          userid (string) : 登録者
-          limit : 検索数上限
-        <説明>
-         引数にマッチする登録済データの検索を行う。
+    def search(cls, diagnostics, upper=1, lower=0, subno=1, userid=None, limit=100):
+        """Search for registered data that maches the arguments.
 
+        Parameters
+        ----------
+        diagnostics : list
+            list of diagnostics name.
+        upper : int
+            upper shot number, by default 1
+        lower : int
+            lower shot number, by default 0
+        subno : int, optional
+            sub-shotnumber, by default 1
+        userid : int, optional
+            ID number of the registrant, by default None
+        limit : int, optional
+            maximum nuber of searches, by default 100
+
+        Returns
+        -------
+        list
+            containing _AnaDataInfo instances which have shot information.
+
+        Example
+        --------
+        .. prompt:: python >>> auto
+
+            >>> from nifs.anadata import Anadata
+            >>> AnaData.search("Bolometer", upper=10010, lower=10000)
+            [_AnaDataInfo]
         """
         r = _AnaData.search(diagnostics, upper, lower, subno, userid, limit)
         return [_AnaDataInfo(e) for e in r]
