@@ -7,12 +7,12 @@ Anadata module
 
 This module can handle the analyzed data stored in Kaiseki server.
 (retrieving, registoring, etc.)
-Almost all members are implemeted in C++ modules (`libana2`_).
+Retrieving method is implemeted in C++ modules (`libana2`_), and retrieved dataset
+is constitued by ``xarray.Dataset``.
 
 
 .. autoclass:: nifs.anadata.AnaData
     :members:
-    :show-inheritance:
 
 .. autoclass:: nifs.anadata.NewAnaData
     :members:

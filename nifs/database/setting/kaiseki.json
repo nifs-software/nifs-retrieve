@@ -1,0 +1,7 @@
+{
+    "host": "egdb.lhd.nifs.ac.jp",
+    "database": "db1",
+    "user": "anonymous",
+    "password": "",
+    "port": 5432
+}

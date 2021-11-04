@@ -2,17 +2,20 @@
 ============================
 Downloading and Installation
 ============================
-
+.. _Python Setup Tools:       http://pypi.python.org/pypi/setuptools
+.. _numpy:                    https://numpy.org
+.. _xarray:                   http://xarray.pydata.org
+.. _psycopg2:                 https://www.psycopg.org
+.. _matplotlib:               https://matplotlib.org
 .. _Retrieve-dbstore-SDK:     https://w3.lhd.nifs.ac.jp/LABCOM_Documents.htm
 .. _LABCOM Download page:     https://w3.lhd.nifs.ac.jp/en/LABCOM_Download-e.htm
-.. _development repository:   https://github.com/nifs-lhd/nifs
 .. _libana2:                  http://kaiseki-dev.lhd.nifs.ac.jp/software/libana/index-e_new.htm
-.. _Python Setup Tools:       http://pypi.python.org/pypi/setuptools
+.. _development repository:   https://github.com/nifs-lhd/nifs
 
 Prerequisites
 =============
-The version python is assumed to be over 3.6+, and
-the nifs package requires some python packages: numpy, psycopg2 and matplotlib.
+The version python is assumed to be over 3.9+, and
+the nifs package requires some python packages: `numpy`_, `xarray`_, `psycopg2`_ and `matplotlib`_.
 IPython is recommended for interactive use.
 
 In addition, C++ external libraries: retrieve-dbstore-SDK, libana2 have to be intalled in advance.
@@ -96,7 +99,7 @@ Once you have the source files, locate the foloder containing setup.py and run:
 
     python setup.py install
 
-If all the required dependencies are present (numpy, psycopg2 and matplotlib),
+If all the required dependencies are present,
 this should start the NIFS package compilation and installation process.
 
 .. warning:: 

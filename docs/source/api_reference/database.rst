@@ -1,6 +1,6 @@
 Database module
 ===============
-module for obtaining experimental information, etc.
+module for accessing to kaiseki- or LABCOM servers, obtaining experimental information, etc.
 
 .. automodule:: nifs.database.database
     :members:
