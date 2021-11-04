@@ -11,8 +11,8 @@ Downloading and Installation
 
 Prerequisites
 =============
-The version python is assumed to be over 3.6+, and
-the nifs package requires some python packages: numpy, psycopg2 and matplotlib.
+The version python is assumed to be over 3.9+, and
+the nifs package requires some python packages: numpy, xarray, psycopg2 and matplotlib.
 IPython is recommended for interactive use.
 
 In addition, C++ external libraries: retrieve-dbstore-SDK, libana2 have to be intalled in advance.
