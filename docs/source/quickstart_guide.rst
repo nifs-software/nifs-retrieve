@@ -9,7 +9,7 @@ Quickstart Guide
 Retrieve analyzed data
 ======================
 
-At first generate :py:class:`Anadata` instance:
+At first generate :py:class:`AnaData` instance:
 
 .. prompt:: python >>> auto
 

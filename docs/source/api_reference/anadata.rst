@@ -13,7 +13,6 @@ is constitued by ``xarray.Dataset``.
 
 .. autoclass:: nifs.anadata.AnaData
     :members:
-    :show-inheritance:
 
 .. autoclass:: nifs.anadata.NewAnaData
     :members:

@@ -14,7 +14,7 @@ class AnaData:
 
     class to handle analyzed data stored in analysis (kaiseki) server.
     When retrieving or registering data to kaiseki server,
-    wrapper class :py:class:_AnaData which is implemeted in libana2 is used.
+    wrapper class :py:class:`_AnaData` which is implemeted in libana2 is used.
     Retrieved data is reconstructed as one dataset
     using `xarray package <http://xarray.pydata.org/>`_
 
@@ -28,6 +28,7 @@ class AnaData:
     Example
     --------
     .. prompt:: python >>> auto
+
         >>> from nifs.anadata import AnaData
         >>>
         >>> ana = AnaData(80000, 1)
@@ -37,7 +38,6 @@ class AnaData:
         # set initial values to prevent undefined behaviour.
         self._shot = shot
         self._subshot = subshot
-        self._diagnostics = None
         # open database
         self.database = get_connection()
 
@@ -56,10 +56,12 @@ class AnaData:
         return self._shot
 
     def retrieve(self, diagnostics: str) -> xr.Dataset:
-        """Retrieving analyzed data from kaiseki-server.
+        """
+        Retrieving analyzed data from kaiseki-server.
         This methods returns a xarray.Dataset object.
         If you want to know about xarray, please see the xarray HP:
         http://xarray.pydata.org/.
+
 
         Parameters
         ----------
@@ -74,10 +76,11 @@ class AnaData:
         Examples
         --------
         .. prompt :: python >>> auto
+
             >>> from nifs.anadata import AnaData
             >>>
             >>> ana = AnaData(80000, 1)
-            >>> # Retrieveing dataset of thomson
+            >>> # Retrieving dataset of thomson
             >>> ds = ana.retrieve("thomson")
             >>> ds
             <xarray.Dataset>
@@ -94,7 +97,7 @@ class AnaData:
                 laser number  (Time, R) float64 5.0 5.0 5.0 5.0 5.0 ... 1.0 1.0 1.0 1.0 1.0
             Attributes:
                 diagnostics:  thomson
-                description:  density (ne) is only for very rough information\nDo not use...
+                description:  density (ne) is only for very rough information. Do not use...
         """
         ana = _AnaData.retrieve(diagnostics, self.shot, self._subshot)
 
@@ -106,7 +109,7 @@ class AnaData:
             ana.getValName(i): ([key for key in coords.keys()], ana.getValData(i), {"units": ana.getValUnit(i)})
             for i in range(val_num)
         }
-        attrs = {"diagnostics": diagnostics, "description": ana.getComment()}
+        attrs = {"diagnostics": diagnostics, "description": ana.getComment(), "shot_number": self.shot}
 
         ds = xr.Dataset(data_vars=data_vars, coords=coords, attrs=attrs)
         for i in range(dim_num):
@@ -125,6 +128,7 @@ class AnaData:
         Examples
         --------
         .. prompt :: python >>> auto
+
             >>> from nifs.anadata import AnaData
             >>> ana = AnaData(80000, 1)
             >>> ana.diagnostics_list()

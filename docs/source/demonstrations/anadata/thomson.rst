@@ -7,6 +7,7 @@ Electron temperature profile
 .. literalinclude:: ../../../../demos/anadata/thomson.py
 
 output in std:
+
 .. code-block::
 
     <xarray.Dataset>
