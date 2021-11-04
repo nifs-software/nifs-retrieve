@@ -1,0 +1,7 @@
+{
+    "host": "dasindex.lhd.nifs.ac.jp",
+    "database": "index",
+    "user": "pg_ro",
+    "password": "20020122retrieve5",
+    "port": 5432
+}

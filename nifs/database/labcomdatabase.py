@@ -1,61 +1,75 @@
 # -*- coding: utf-8
+import os.path as path
+import json
 import psycopg2
 
 VER = "$Id: labcomdatabase.py,v 1.2 2020/07/15 02:59:48 yoshida Exp $"
-
-#
-# データベース接続用パラメタ
-#
-DB = {
-    "host": "dasindex.lhd.nifs.ac.jp",
-    "database": "index",
-    "user": "pg_ro",
-    "password": "20020122retrieve5",
-    "port": 5432,
-}
-# CONNECTION_STRING="egdb.lhd.nifs.ac.jp:db1:plasma::--client_encoding=UTF8:"
+BASE = path.dirname(__file__)
 
 
-def __get_labcomconnection():
+def get_labcomconnection():
+    """Establish a new connection to LABCOM.
+
+    Returns
+    -------
+    psycopg2.extensions.connection
+        connection object
     """
-    LABCOMデータベース接続用メソッド
-    プラベート
-    """
-    #    db = pgdb.connect(host=DB['host'],database=DB['database'],user=DB['user'],password=DB['password'])
-    #    db = pgdb.connect(dsn=CONNECTION_STRING)
-    db = psycopg2.connect(host=DB["host"], database=DB["database"], user=DB["user"], password=DB["password"])
-    return db
+    # Load database config
+    with open(path.join(BASE, "setting", "labcom.json"), "r") as f:
+        config = json.load(f)
+    try:
+        db = psycopg2.connect(**config)
+        return db
+    except Exception:
+        raise ConnectionError("Failed to establish a new connection to LABCOM.")
 
 
-def get_last_subshot_no(diag, shotno):
-    """
-    [関数名] get_last_subshot_no
-    <引数>
-      diag (int)   :  計測名 (in)
-      shotno (int) :  ショット番号 (in)
-    <返値>
-      サブショット番号 (int)
-    説明
-      指定された計測名、ショット番号の最後のサブショット番号を取得する。
+def get_last_subshot_no(diag: str, shotno: int):
+    """指定された計測名、ショット番号の最後のサブショット番号を取得する。
+
+    Parameters
+    ----------
+    diag : int
+        name of diagnostics
+    shotno : int
+        shot number
+
+    Returns
+    -------
+    int
+        sub-shot number
     """
     subshot = 1
-    db = __get_labcomconnection()
+    db = get_labcomconnection()
     cursor = db.cursor()
-    sql = (
-        "select alias_arcshot, max(alias_subshot) as subshot from shot, diag where diag.diag_name = trim('%s') and shot.diag_id = diag.diag_id and shot.site_id=diag.site_id and alias_arcshot=%d group by alias_arcshot"
-        % (diag, shotno)
-    )
-    # print sql
-    cursor.execute(sql)
-    while 1:
-        row = cursor.fetchone()
-        if not row:
-            break
-        if 2 == len(row):
-            subshot = row[1]
-    cursor.close()
-    db.close()
-    return subshot
+    sql = f"""
+SELECT
+    alias_arcshot,
+    max(alias_subshot) as subshot
+FROM
+    shot, diag
+WHERE
+    diag.diag_name = trim({diag}) and
+    shot.diag_id = diag.diag_id and
+    shot.site_id=diag.site_id and
+    alias_arcshot={shotno}
+GROUP BY
+    alias_arcshot
+"""
+    try:
+        cursor.execute(sql)
+        while 1:
+            row = cursor.fetchone()
+            if not row:
+                break
+            if 2 == len(row):
+                subshot = row[1]
+        cursor.close()
+        db.close()
+        return subshot
+    except Exception:
+        raise RuntimeError("Failed to excute the SQL statement.")
 
 
 if __name__ == "__main__":
