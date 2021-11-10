@@ -1,0 +1,454 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2. Rawdata module &mdash; NIFS Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/logo_nifs.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3. Database module" href="database.html" />
+    <link rel="prev" title="1. Anadata module" href="anadata.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> NIFS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Table of Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">1. Downloading and Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart_guide.html">2. Quickstart Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">3. References</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Demonstrations</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../demonstrations/demonstrations.html">1. AnaData Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../demonstrations/demonstrations.html#rawdata-functionality">2. RawData Functionality</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="anadata.html">1. Anadata module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Rawdata module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database.html">3. Database module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="expseq.html">4. Experimental Seaquence Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utilities.html">5. Utilities</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">NIFS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li><span class="section-number">2. </span>Rawdata module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api_reference/rawdata.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="rawdata-module">
+<h1><span class="section-number">2. </span>Rawdata module<a class="headerlink" href="#rawdata-module" title="Permalink to this headline">¶</a></h1>
+<p>Module for handling data stored in LABCOM systems</p>
+<span class="target" id="module-nifs.rawdata"></span><dl class="py class">
+<dt class="sig sig-object py" id="nifs.rawdata.RawData">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">nifs.rawdata.</span></span><span class="sig-name descname"><span class="pre">RawData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nifs/rawdata/rawdata.html#RawData"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nifs.rawdata.RawData" title="Permalink to this definition">¶</a></dt>
+<dd><p>[クラス名] RawData
+&lt;メンバー&gt;</p>
+<blockquote>
+<div><p>val (string) : 生データをstringで表現したもの
+params (dict) : 収集パラメタ</p>
+</div></blockquote>
+<dl class="simple">
+<dt>&lt;説明&gt;</dt><dd><p>生データを保持するクラス</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="nifs.rawdata.RawData.dbsabort">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">dbsabort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nifs/rawdata/rawdata.html#RawData.dbsabort"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nifs.rawdata.RawData.dbsabort" title="Permalink to this definition">¶</a></dt>
+<dd><p>[関数名] dbsabort
+&lt;引数&gt;</p>
+<blockquote>
+<div><p>handle : (int) dbstore 用ハンドル</p>
+</div></blockquote>
+<dl class="simple">
+<dt>&lt;返値&gt;</dt><dd><p>なし</p>
+</dd>
+<dt>&lt;説明&gt;</dt><dd><p>dbstore のセッションを中断する</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nifs.rawdata.RawData.dbsclose">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">dbsclose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nifs/rawdata/rawdata.html#RawData.dbsclose"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nifs.rawdata.RawData.dbsclose" title="Permalink to this definition">¶</a></dt>
+<dd><p>[関数名] dbsclose
+&lt;引数&gt;</p>
+<blockquote>
+<div><p>handle : (int) dbstore 用ハンドル</p>
+</div></blockquote>
+<dl class="simple">
+<dt>&lt;返値&gt;</dt><dd><p>なし</p>
+</dd>
+<dt>&lt;説明&gt;</dt><dd><p>dbstore のセッションをクローズする</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nifs.rawdata.RawData.dbsopen">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">dbsopen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">emailAddress</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">diagName</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shotNo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subNo</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nifs/rawdata/rawdata.html#RawData.dbsopen"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nifs.rawdata.RawData.dbsopen" title="Permalink to this definition">¶</a></dt>
+<dd><p>[関数名] dbsopen
+&lt;引数&gt;</p>
+<blockquote>
+<div><p>emailAddress : (string) メールアドレス
+diagName : (string) 計測名
+shotNo : (int ) ショット番号
+subNo : (int )サブショット番号
+obj : (RawDataオブジェクトまたは RawData オブジェクトの配列)</p>
+</div></blockquote>
+<dl class="simple">
+<dt>&lt;返値&gt;</dt><dd><p>書き込み用ハンドル</p>
+</dd>
+<dt>&lt;説明&gt;</dt><dd><p>dbstore で保存するため、セッションをオープンする。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nifs.rawdata.RawData.dbswrite">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">dbswrite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nifs/rawdata/rawdata.html#RawData.dbswrite"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nifs.rawdata.RawData.dbswrite" title="Permalink to this definition">¶</a></dt>
+<dd><p>[関数名] store
+&lt;引数&gt;</p>
+<blockquote>
+<div><p>ch : (int )チャンネル番号
+obj : (RawDataオブジェクトまたは RawData オブジェクトの配列)</p>
+</div></blockquote>
+<dl class="simple">
+<dt>&lt;返値&gt;</dt><dd><p>True / False</p>
+</dd>
+<dt>&lt;説明&gt;</dt><dd><p>handle で結びつけられたセッションを使って dbstore で保存する。
+objs が RawData オブジェクトの場合、そのオブジェクトを チャンネル番号 ch に登録する。
+objs が list オブジェクトの場合、配列の各メンバー(RawData オブジェクト)をチャンネル番号 ch から順に登録する</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nifs.rawdata.RawData.get_val">
+<span class="sig-name descname"><span class="pre">get_val</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nifs/rawdata/rawdata.html#RawData.get_val"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nifs.rawdata.RawData.get_val" title="Permalink to this definition">¶</a></dt>
+<dd><p>[関数名] get_val
+&lt;引数&gt;</p>
+<blockquote>
+<div><p>なし</p>
+</div></blockquote>
+<dl class="simple">
+<dt>&lt;返値&gt;</dt><dd><p>numpy.array の配列</p>
+</dd>
+<dt>&lt;説明&gt;</dt><dd><p>データを int の配列(numpy.array)に変換して返す</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nifs.rawdata.RawData.retrieve">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">retrieve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">diag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shotno</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subno</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nifs/rawdata/rawdata.html#RawData.retrieve"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nifs.rawdata.RawData.retrieve" title="Permalink to this definition">¶</a></dt>
+<dd><p>[関数名] retrieve(diag,shotno,subno,chNo,timeout=0)
+&lt;引数&gt;</p>
+<blockquote>
+<div><blockquote>
+<div><p>diag (string) :  計測名 (in)</p>
+</div></blockquote>
+<dl class="simple">
+<dt>shotno (int)<span class="classifier">ショット番号 (in)</span></dt><dd><p>subno (int) : サブショット番号 (in)
+chNo (int) : チャンネル番号 (in)
+timeout (int ) : タイムアウト秒 (in)</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="simple">
+<dt>&lt;返値&gt;</dt><dd><p>生データ(RawData オブジェクト)</p>
+</dd>
+<dt>&lt;説明&gt;</dt><dd><p>引数で指定されたショットを検索し、生データオブジェクトを返す</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="nifs.rawdata.TimeData">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">nifs.rawdata.</span></span><span class="sig-name descname"><span class="pre">TimeData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nifs/rawdata/timedata.html#TimeData"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nifs.rawdata.TimeData" title="Permalink to this definition">¶</a></dt>
+<dd><p>[クラス名] TimeData
+&lt;メンバー&gt;
+val (numpy.array(ndtype=float32) : 電圧データの配列(numpy.array)
+&lt;説明&gt;
+収集タイミングの配列データを保持するクラス</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nifs.rawdata.TimeData.get_val">
+<span class="sig-name descname"><span class="pre">get_val</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nifs/rawdata/timedata.html#TimeData.get_val"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nifs.rawdata.TimeData.get_val" title="Permalink to this definition">¶</a></dt>
+<dd><p>[関数名] get_val
+&lt;引数&gt;</p>
+<blockquote>
+<div><p>なし</p>
+</div></blockquote>
+<dl class="simple">
+<dt>&lt;返値&gt;</dt><dd><p>numpy.array の配列</p>
+</dd>
+<dt>&lt;説明&gt;</dt><dd><p>データを float32 の配列(numpy.array)に変換して返す</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nifs.rawdata.TimeData.retrieve">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">retrieve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">diag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shotno</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subno</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nifs/rawdata/timedata.html#TimeData.retrieve"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nifs.rawdata.TimeData.retrieve" title="Permalink to this definition">¶</a></dt>
+<dd><p>[関数名] retrieve(diag,shotno,subno,chNo,timeout=0)
+&lt;引数&gt;</p>
+<blockquote>
+<div><blockquote>
+<div><p>diag (string) :  計測名 (in)</p>
+</div></blockquote>
+<dl class="simple">
+<dt>shotno (int)<span class="classifier">ショット番号 (in)</span></dt><dd><p>subno (int) : サブショット番号 (in)
+chNo (int) : チャンネル番号 (in)
+timeout (int ) : タイムアウト秒 (in)</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="simple">
+<dt>&lt;返値&gt;</dt><dd><p>時刻配列データ(VolData オブジェクト)</p>
+</dd>
+<dt>&lt;説明&gt;</dt><dd><p>引数で指定されたショットを検索し、電圧データオブジェクトを返す</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="nifs.rawdata.VoltData">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">nifs.rawdata.</span></span><span class="sig-name descname"><span class="pre">VoltData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nifs/rawdata/voltdata.html#VoltData"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nifs.rawdata.VoltData" title="Permalink to this definition">¶</a></dt>
+<dd><p>[クラス名] VoltData
+&lt;メンバー&gt;
+val (numpy.array(ndtype=float32) : 電圧データの配列(numpy.array)
+params (dict) : 収集パラメタ
+&lt;説明&gt;
+電圧データを保持するクラス</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nifs.rawdata.VoltData.get_val">
+<span class="sig-name descname"><span class="pre">get_val</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nifs/rawdata/voltdata.html#VoltData.get_val"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nifs.rawdata.VoltData.get_val" title="Permalink to this definition">¶</a></dt>
+<dd><p>[関数名] get_val
+&lt;引数&gt;</p>
+<blockquote>
+<div><p>なし</p>
+</div></blockquote>
+<dl class="simple">
+<dt>&lt;返値&gt;</dt><dd><p>numpy.array の配列</p>
+</dd>
+<dt>&lt;説明&gt;</dt><dd><p>データを int の配列(numpy.array)に変換して返す</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nifs.rawdata.VoltData.retrieve">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">retrieve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">diag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shotno</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subno</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nifs/rawdata/voltdata.html#VoltData.retrieve"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nifs.rawdata.VoltData.retrieve" title="Permalink to this definition">¶</a></dt>
+<dd><p>[関数名] retrieve(diag,shotno,subno,chNo,timeout=0)
+&lt;引数&gt;</p>
+<blockquote>
+<div><blockquote>
+<div><p>diag (string) :  計測名 (in)</p>
+</div></blockquote>
+<dl class="simple">
+<dt>shotno (int)<span class="classifier">ショット番号 (in)</span></dt><dd><p>subno (int) : サブショット番号 (in)
+chNo (int) : チャンネル番号 (in)
+timeout (int ) : タイムアウト秒 (in)</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="simple">
+<dt>&lt;返値&gt;</dt><dd><p>電圧データ(VolData オブジェクト)</p>
+</dd>
+<dt>&lt;説明&gt;</dt><dd><p>引数で指定されたショットを検索し、電圧データオブジェクトを返す</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="database.html" class="btn btn-neutral float-right" title="3. Database module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="anadata.html" class="btn btn-neutral float-left" title="1. Anadata module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, Koyo Munechika
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

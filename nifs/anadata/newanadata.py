@@ -1,11 +1,8 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
 import socket
 import traceback
 import struct
 import select
 import time
-import sys
 from nifs.database import chk_exist
 
 MC_ADDR = "225.1.1.1"
@@ -16,14 +13,21 @@ EXPECTED_SIZE = 4 * 4 + DIAG_LEN
 
 class NewAnaData:
     """
-    [クラス名] NewAnaData
-    <メンバ>
-      diagnostics : 計測名
-      shotNo : ショット番号
-      subNo : サブショット番号
-    <説明>
-      解析データの新規登録通知のマルチキャストパケットを扱うクラス
+    class to handle multicast packets of the new registration notification of analysis data.
+
+    Parameters
+    ----------
+    diagnostics : str
+        name of diagnostics
+    shotNo : int
+        shot number
+    subNo : int
+        sub-shot number
     """
+    def __init__(self, diagnostics, shotNo, subNo):
+        self.diagnostics = diagnostics
+        self.shotNo = shotNo
+        self.subNo = subNo
 
     @classmethod
     def strip(cls, s):
@@ -32,20 +36,16 @@ class NewAnaData:
         idx = s.find(b"\x00")
         return s[:idx].decode()
 
-    def __init__(self, diagnostics, shotNo, subNo):
-        self.diagnostics = diagnostics
-        self.shotNo = shotNo
-        self.subNo = subNo
-
     @classmethod
     def get_next_packet(cls, timeout):
         """
-        [関数名] get_next_packet(timeout)
-        <引数>
-          timeout (int ) : タイムアウト秒 (in)
-    　　<説明>
-          解析データ登録通知のマルチキャストパケットをtimeout秒待って受信し、
-          NewAnaData オブジェクトを返す。timeout 秒内にパケットを受信できなかった場合None を返す
+        解析データ登録通知のマルチキャストパケットをtimeout秒待って受信し、
+        NewAnaData オブジェクトを返す。timeout 秒内にパケットを受信できなかった場合None を返す
+
+        Parameters
+        ----------
+        timeout : int
+            timeout in a unit of second
         """
         sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP)
         sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
@@ -82,14 +82,17 @@ class NewAnaData:
     @classmethod
     def wait(cls, diagnostics, shotNo, timeout):
         """
-        [関数名] wait(diagnosticcs, shotNo, timeout)
-        <引数>
-          diagnstics(string) :計測名
-          shotno(int) : ショット番号
-          timeout (int ) : タイムアウト秒 (in)
-        <説明>
-          計測名 diagnostics の解析データ登録通知のマルチキャストパケットをtimeout秒待って受信し、
-          NewAnaData オブジェクトを返す。timeout 秒内にパケットを受信できなかった場合None を返す
+        計測名 diagnostics の解析データ登録通知のマルチキャストパケットをtimeout秒待って受信し、
+        NewAnaData オブジェクトを返す。timeout 秒内にパケットを受信できなかった場合None を返す
+
+        Parameters
+        -----------
+        diagnstics: str
+            name of diagnostics
+        shotno : int
+            shot number
+        timeout : int
+            timeout in a unit of second
         """
         sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP)
         sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)

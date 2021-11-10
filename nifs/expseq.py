@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 import socket
 import traceback
 import struct
@@ -10,13 +9,16 @@ MC_PORT = 7000
 
 class ExpSeq:
     """
-    [クラス名] ExpSeq
-    <メンバ>
-      seqNo : シーケンス番号
-      shotNo : ショット番号
-      subNo : サブショット番号
-    <説明>
-      実験シーケンスのマルチキャストパケットを扱うクラス
+    class to handle the multicast packet of experimental sequence.
+
+    Parameters
+    ----------
+    seqNo : int
+        sequence number
+    shotNo : int
+        shot number
+    subNo : int
+        sub-shot number
     """
 
     def __init__(self, seqNo, shotNo, subNo):
@@ -27,12 +29,13 @@ class ExpSeq:
     @classmethod
     def get_next_packet(cls, timeout=-1):
         """
-        [関数名] get_next_packet(timeout=-1)
-        <引数>
-          timeout (int ) : タイムアウト秒 (in)
-        <説明>
-          実験シーケンスのマルチキャストパケットを受信し、ExpSeq オブジェクトを返す。
-          timeout が正の場合は timeout 秒だけ待ち、この間にパケットを受信できなかった場合None を返す
+        実験シーケンスのマルチキャストパケットを受信し、ExpSeq オブジェクトを返す。
+        timeout が正の場合は timeout 秒だけ待ち、この間にパケットを受信できなかった場合None を返す
+
+        Parameters
+        ----------
+        timeout : int
+            timeout in a unit of second
         """
         sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP)
         sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)

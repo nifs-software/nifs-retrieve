@@ -15,6 +15,11 @@ class AnaData:
     Retrieved data is reconstructed as one dataset
     using `xarray package <http://xarray.pydata.org/>`_
 
+    .. todo::
+
+        the method of registering a xarray.Datset to kaiseki-server
+        has not been implemented yet.
+
     Parameters
     ----------
     shot_number : int, required
@@ -100,7 +105,7 @@ class AnaData:
     def retrieve(self, diagnostics: str) -> xr.Dataset:
         """
         Retrieving analyzed data from kaiseki-server.
-        This methods returns a xarray.Dataset object.
+        This method returns a xarray.Dataset object.
         If you want to know about xarray, please see the xarray documentation:
         http://xarray.pydata.org/.
 
@@ -108,7 +113,7 @@ class AnaData:
         Parameters
         ----------
         diagnostics : str
-            name of diagnostics which is registred in the kaiseki-server.
+            name of diagnostics which is registered in the kaiseki-server.
 
         Returns
         -------

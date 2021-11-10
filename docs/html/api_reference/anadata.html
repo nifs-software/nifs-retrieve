@@ -1,0 +1,384 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1. Anadata module &mdash; NIFS Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/logo_nifs.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2. Rawdata module" href="rawdata.html" />
+    <link rel="prev" title="1. AnaData Functionality" href="../demonstrations/demonstrations.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> NIFS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Table of Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">1. Downloading and Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart_guide.html">2. Quickstart Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">3. References</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Demonstrations</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../demonstrations/demonstrations.html">1. AnaData Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../demonstrations/demonstrations.html#rawdata-functionality">2. RawData Functionality</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Anadata module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rawdata.html">2. Rawdata module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database.html">3. Database module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="expseq.html">4. Experimental Seaquence Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utilities.html">5. Utilities</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">NIFS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li><span class="section-number">1. </span>Anadata module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api_reference/anadata.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="anadata-module">
+<h1><span class="section-number">1. </span>Anadata module<a class="headerlink" href="#anadata-module" title="Permalink to this headline">¶</a></h1>
+<p>This module can handle the analyzed data stored in Kaiseki server.
+(retrieving, registering, etc.)
+Retrieving method is implemeted in C++ modules (<a class="reference external" href="http://kaiseki-dev.lhd.nifs.ac.jp/software/libana/index-e_new.htm">libana2</a>), and retrieved dataset
+uses a <code class="docutils literal notranslate"><span class="pre">xarray.Dataset</span></code>.</p>
+<span class="target" id="module-nifs.anadata"></span><dl class="py class">
+<dt class="sig sig-object py" id="nifs.anadata.AnaData">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">nifs.anadata.</span></span><span class="sig-name descname"><span class="pre">AnaData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shot_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subshot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nifs/anadata/anadata.html#AnaData"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nifs.anadata.AnaData" title="Permalink to this definition">¶</a></dt>
+<dd><p>class to handle analyzed data stored in analysis (kaiseki) server.
+When retrieving or registering data to kaiseki server,
+wrapper class <code class="xref py py-class docutils literal notranslate"><span class="pre">_AnaData</span></code> which is implemeted in libana2 is used.
+Retrieved data is reconstructed as one dataset
+using <a class="reference external" href="http://xarray.pydata.org/">xarray package</a></p>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>the method of registering a xarray.Datset to kaiseki-server
+has not been implemented yet.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shot_number</strong> (<em>int</em><em>, </em><em>required</em>) – shot number</p></li>
+<li><p><strong>subshot</strong> (<em>int</em><em>, </em><em>optional</em>) – sub-shot number, by default 1</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: ">>> ";
+}
+</style><span class="prompt1"><span class="kn">from</span> <span class="nn">nifs.anadata</span> <span class="kn">import</span> <span class="n">AnaData</span></span>
+<span class="prompt1"><span class="c1"># set (shot number: 80000, subshot number: 1) database</span></span>
+<span class="prompt1"><span class="n">ana</span> <span class="o">=</span> <span class="n">AnaData</span><span class="p">(</span><span class="mi">80000</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span></span>
+</pre></div></div><dl class="py property">
+<dt class="sig sig-object py" id="nifs.anadata.AnaData.diagnostics_list">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">diagnostics_list</span></span><em class="property"><span class="pre">:</span> <span class="pre">dict</span></em><a class="headerlink" href="#nifs.anadata.AnaData.diagnostics_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Registered diagnostics names at a shot number.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>{name: comment}</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="kn">from</span> <span class="nn">nifs.anadata</span> <span class="kn">import</span> <span class="n">AnaData</span></span>
+<span class="prompt1"><span class="n">ana</span> <span class="o">=</span> <span class="n">AnaData</span><span class="p">(</span><span class="mi">80000</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span></span>
+<span class="prompt1"><span class="n">ana</span><span class="o">.</span><span class="n">diagnostics_list</span>
+<span class="p">{</span><span class="s1">&#39;ha1&#39;</span><span class="p">:</span> <span class="s1">&#39;Time behaviors of visible lines of Halpha and HeI&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;ech&#39;</span><span class="p">:</span> <span class="s1">&#39;Wave form of ECH pulse&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;nb1pwr&#39;</span><span class="p">:</span> <span class="s1">&#39;NBI power of BL1&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;imp01&#39;</span><span class="p">:</span> <span class="s1">&#39;Line intensities of Lyman-alpha and some impurity ions&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;wp&#39;</span><span class="p">:</span> <span class="s1">&#39;Plasma stored energy estimated by diamagnetic flux measurement&#39;</span><span class="p">,</span><span class="o">...</span>
+<span class="p">}</span></span>
+</pre></div></div></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nifs.anadata.AnaData.retrieve">
+<span class="sig-name descname"><span class="pre">retrieve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">diagnostics</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">xarray.core.dataset.Dataset</span></span></span><a class="reference internal" href="../_modules/nifs/anadata/anadata.html#AnaData.retrieve"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nifs.anadata.AnaData.retrieve" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieving analyzed data from kaiseki-server.
+This method returns a xarray.Dataset object.
+If you want to know about xarray, please see the xarray documentation:
+<a class="reference external" href="http://xarray.pydata.org/">http://xarray.pydata.org/</a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>diagnostics</strong> (<em>str</em>) – name of diagnostics which is registered in the kaiseki-server.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>dataset of a xarray object.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>xarray.Dataset</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="kn">from</span> <span class="nn">nifs.anadata</span> <span class="kn">import</span> <span class="n">AnaData</span></span>
+<span class="prompt1"></span>
+<span class="prompt1"><span class="n">ana</span> <span class="o">=</span> <span class="n">AnaData</span><span class="p">(</span><span class="mi">80000</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span></span>
+<span class="prompt1"><span class="c1"># Retrieving dataset of thomson</span></span>
+<span class="prompt1"><span class="n">ds</span> <span class="o">=</span> <span class="n">ana</span><span class="o">.</span><span class="n">retrieve</span><span class="p">(</span><span class="s2">&quot;thomson&quot;</span><span class="p">)</span></span>
+<span class="prompt1"><span class="n">ds</span>
+<span class="o">&lt;</span><span class="n">xarray</span><span class="o">.</span><span class="n">Dataset</span><span class="o">&gt;</span>
+<span class="n">Dimensions</span><span class="p">:</span>       <span class="p">(</span><span class="n">Time</span><span class="p">:</span> <span class="mi">96</span><span class="p">,</span> <span class="n">R</span><span class="p">:</span> <span class="mi">137</span><span class="p">)</span>
+<span class="n">Coordinates</span><span class="p">:</span>
+<span class="o">*</span> <span class="n">Time</span>          <span class="p">(</span><span class="n">Time</span><span class="p">)</span> <span class="n">float64</span> <span class="mf">0.0</span> <span class="mf">33.0</span> <span class="mf">66.0</span> <span class="o">...</span> <span class="mf">3.1e+03</span> <span class="mf">3.133e+03</span> <span class="mf">3.166e+03</span>
+<span class="o">*</span> <span class="n">R</span>             <span class="p">(</span><span class="n">R</span><span class="p">)</span> <span class="n">float64</span> <span class="mf">2.525e+03</span> <span class="mf">2.55e+03</span> <span class="o">...</span> <span class="mf">4.884e+03</span> <span class="mf">4.895e+03</span>
+<span class="n">Data</span> <span class="n">variables</span><span class="p">:</span>
+    <span class="n">Te</span>            <span class="p">(</span><span class="n">Time</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span> <span class="n">float64</span> <span class="mf">84.0</span> <span class="mf">0.0</span> <span class="mf">38.0</span> <span class="mf">47.0</span> <span class="o">...</span> <span class="mf">5.0</span> <span class="mf">73.0</span> <span class="mf">5.0</span> <span class="mf">125.0</span>
+    <span class="n">dTe</span>           <span class="p">(</span><span class="n">Time</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span> <span class="n">float64</span> <span class="mf">2.178e+04</span> <span class="mf">0.0</span> <span class="mf">40.0</span> <span class="o">...</span> <span class="mf">2.178e+04</span> <span class="mf">2.178e+04</span>
+    <span class="n">n_e</span>           <span class="p">(</span><span class="n">Time</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span> <span class="n">float64</span> <span class="mf">9.0</span> <span class="mf">138.0</span> <span class="mf">16.0</span> <span class="mf">4.0</span> <span class="o">...</span> <span class="mf">38.0</span> <span class="mf">11.0</span> <span class="mf">0.0</span> <span class="mf">16.0</span>
+    <span class="n">dn_e</span>          <span class="p">(</span><span class="n">Time</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span> <span class="n">float64</span> <span class="mf">8.0</span> <span class="mf">63.0</span> <span class="mf">7.0</span> <span class="mf">6.0</span> <span class="mf">7.0</span> <span class="o">...</span> <span class="mf">13.0</span> <span class="mf">8.0</span> <span class="mf">11.0</span> <span class="mf">7.0</span>
+    <span class="n">laser</span>         <span class="p">(</span><span class="n">Time</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span> <span class="n">float64</span> <span class="mf">5.209e+03</span> <span class="mf">5.209e+03</span> <span class="o">...</span> <span class="mf">4.373e+03</span> <span class="mf">4.373e+03</span>
+    <span class="n">laser</span> <span class="n">number</span>  <span class="p">(</span><span class="n">Time</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span> <span class="n">float64</span> <span class="mf">5.0</span> <span class="mf">5.0</span> <span class="mf">5.0</span> <span class="mf">5.0</span> <span class="mf">5.0</span> <span class="o">...</span> <span class="mf">1.0</span> <span class="mf">1.0</span> <span class="mf">1.0</span> <span class="mf">1.0</span> <span class="mf">1.0</span>
+<span class="n">Attributes</span><span class="p">:</span>
+    <span class="n">diagnostics</span><span class="p">:</span>  <span class="n">thomson</span>
+    <span class="n">description</span><span class="p">:</span>  <span class="n">density</span> <span class="p">(</span><span class="n">ne</span><span class="p">)</span> <span class="ow">is</span> <span class="n">only</span> <span class="k">for</span> <span class="n">very</span> <span class="n">rough</span> <span class="n">information</span><span class="o">.</span> <span class="n">Do</span> <span class="ow">not</span> <span class="n">use</span><span class="o">...</span></span>
+</pre></div></div></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="nifs.anadata.AnaData.shot_number">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">shot_number</span></span><em class="property"><span class="pre">:</span> <span class="pre">int</span></em><a class="headerlink" href="#nifs.anadata.AnaData.shot_number" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shot number.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="nifs.anadata.NewAnaData">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">nifs.anadata.</span></span><span class="sig-name descname"><span class="pre">NewAnaData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">diagnostics</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shotNo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subNo</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nifs/anadata/newanadata.html#NewAnaData"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nifs.anadata.NewAnaData" title="Permalink to this definition">¶</a></dt>
+<dd><p>class to handle multicast packets of the new registration notification of analysis data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>diagnostics</strong> (<em>str</em>) – name of diagnostics</p></li>
+<li><p><strong>shotNo</strong> (<em>int</em>) – shot number</p></li>
+<li><p><strong>subNo</strong> (<em>int</em>) – sub-shot number</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="nifs.anadata.NewAnaData.get_next_packet">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">get_next_packet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nifs/anadata/newanadata.html#NewAnaData.get_next_packet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nifs.anadata.NewAnaData.get_next_packet" title="Permalink to this definition">¶</a></dt>
+<dd><p>解析データ登録通知のマルチキャストパケットをtimeout秒待って受信し、
+NewAnaData オブジェクトを返す。timeout 秒内にパケットを受信できなかった場合None を返す</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>timeout</strong> (<em>int</em>) – timeout in a unit of second</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nifs.anadata.NewAnaData.wait">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">wait</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">diagnostics</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shotNo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nifs/anadata/newanadata.html#NewAnaData.wait"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nifs.anadata.NewAnaData.wait" title="Permalink to this definition">¶</a></dt>
+<dd><p>計測名 diagnostics の解析データ登録通知のマルチキャストパケットをtimeout秒待って受信し、
+NewAnaData オブジェクトを返す。timeout 秒内にパケットを受信できなかった場合None を返す</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>diagnstics</strong> (<em>str</em>) – name of diagnostics</p></li>
+<li><p><strong>shotno</strong> (<em>int</em>) – shot number</p></li>
+<li><p><strong>timeout</strong> (<em>int</em>) – timeout in a unit of second</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="rawdata.html" class="btn btn-neutral float-right" title="2. Rawdata module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../demonstrations/demonstrations.html" class="btn btn-neutral float-left" title="1. AnaData Functionality" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, Koyo Munechika
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

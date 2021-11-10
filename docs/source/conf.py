@@ -36,7 +36,10 @@ extensions = [
     "sphinx.ext.napoleon",
     "sphinx-prompt",
     "sphinx.ext.githubpages",
+    "sphinx.ext.todo",
 ]
+
+todo_include_todos = True
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
