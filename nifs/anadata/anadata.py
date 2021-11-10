@@ -1,10 +1,7 @@
-# -*- coding: utf-8 -*-
 import traceback
 import xarray as xr
 from ._anadata import _AnaData
 from nifs.database import get_connection
-
-VER = "$Id: anadata.py,v 1.2 2020/07/15 02:59:48 yoshida Exp $"
 
 
 class AnaData:
@@ -20,7 +17,7 @@ class AnaData:
 
     Parameters
     ----------
-    shot : int, required
+    shot_number : int, required
         shot number
     subshot : int, optional
         sub-shot number, by default 1
@@ -30,14 +27,15 @@ class AnaData:
     .. prompt:: python >>> auto
 
         >>> from nifs.anadata import AnaData
-        >>>
+        >>> # set (shot number: 80000, subshot number: 1) database
         >>> ana = AnaData(80000, 1)
     """
 
-    def __init__(self, shot: int, subshot=1) -> None:
+    def __init__(self, shot_number, subshot=1) -> None:
         # set initial values to prevent undefined behaviour.
-        self._shot = shot
+        self._shot_number = shot_number
         self._subshot = subshot
+        self._diagnostics_list = None
         # open database
         self.database = get_connection()
 
@@ -46,20 +44,64 @@ class AnaData:
         self.database.close()
 
     @property
-    def shot(self) -> int:
+    def shot_number(self) -> int:
         """Shot number.
 
         Returns
         -------
         int
         """
-        return self._shot
+        return self._shot_number
+
+    @property
+    def diagnostics_list(self) -> dict:
+        """Registered diagnostics names at a shot number.
+
+        Returns
+        -------
+        dict
+            {name: comment}
+
+        Examples
+        --------
+        .. prompt :: python >>> auto
+
+            >>> from nifs.anadata import AnaData
+            >>> ana = AnaData(80000, 1)
+            >>> ana.diagnostics_list
+            {'ha1': 'Time behaviors of visible lines of Halpha and HeI',
+             'ech': 'Wave form of ECH pulse',
+             'nb1pwr': 'NBI power of BL1',
+             'imp01': 'Line intensities of Lyman-alpha and some impurity ions',
+             'wp': 'Plasma stored energy estimated by diamagnetic flux measurement',...
+            }
+        """
+        if self._diagnostics_list:
+            return self._diagnostics_list
+        else:
+            # retrieve diagnostics info from kaiseki-server
+            try:
+                cursor = self.database.cursor()
+                sql = (
+                    "SELECT d.name, d.diagcomment "
+                    "FROM diagnostics AS d "
+                    "JOIN datalocation AS dl ON dl.did = d.id "
+                    f"WHERE dl.shotno = {self._shot_number}"
+                )
+                cursor.execute(sql)
+                diag_list = cursor.fetchall()
+                self._diagnostics_list = {name: comment for name, comment in diag_list}
+
+                return self._diagnostics_list
+
+            except Exception:
+                traceback.print_exc()
 
     def retrieve(self, diagnostics: str) -> xr.Dataset:
         """
         Retrieving analyzed data from kaiseki-server.
         This methods returns a xarray.Dataset object.
-        If you want to know about xarray, please see the xarray HP:
+        If you want to know about xarray, please see the xarray documentation:
         http://xarray.pydata.org/.
 
 
@@ -99,7 +141,7 @@ class AnaData:
                 diagnostics:  thomson
                 description:  density (ne) is only for very rough information. Do not use...
         """
-        ana = _AnaData.retrieve(diagnostics, self.shot, self._subshot)
+        ana = _AnaData.retrieve(diagnostics, self._shot_number, self._subshot)
 
         dim_num = ana.getDimNo()
         val_num = ana.getValNo()
@@ -109,47 +151,10 @@ class AnaData:
             ana.getValName(i): ([key for key in coords.keys()], ana.getValData(i), {"units": ana.getValUnit(i)})
             for i in range(val_num)
         }
-        attrs = {"diagnostics": diagnostics, "description": ana.getComment(), "shot_number": self.shot}
+        attrs = {"diagnostics": diagnostics, "description": ana.getComment(), "shot_number": self._shot_number}
 
         ds = xr.Dataset(data_vars=data_vars, coords=coords, attrs=attrs)
         for i in range(dim_num):
             ds[ana.getDimName(i)].attrs["units"] = ana.getDimUnit(i)
 
         return ds
-
-    def diagnostics_list(self) -> dict:
-        """Registered diagnostics names at a shot number.
-
-        Returns
-        -------
-        dict
-            {name: comment}
-
-        Examples
-        --------
-        .. prompt :: python >>> auto
-
-            >>> from nifs.anadata import AnaData
-            >>> ana = AnaData(80000, 1)
-            >>> ana.diagnostics_list()
-            {'ha1': 'Time behaviors of visible lines of Halpha and HeI',
-             'ech': 'Wave form of ECH pulse',
-             'nb1pwr': 'NBI power of BL1',
-             'imp01': 'Line intensities of Lyman-alpha and some impurity ions',
-             'wp': 'Plasma stored energy estimated by diamagnetic flux measurement',...
-            }
-        """
-        try:
-            cursor = self.database.cursor()
-            sql = (
-                "SELECT d.name, d.diagcomment "
-                "FROM diagnostics AS d "
-                "JOIN datalocation AS dl ON dl.did = d.id "
-                f"WHERE dl.shotno = {self.shot}"
-            )
-            cursor.execute(sql)
-            diag_list = cursor.fetchall()
-            return {name: comment for name, comment in diag_list}
-
-        except Exception:
-            traceback.print_exc()
