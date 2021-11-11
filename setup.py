@@ -63,7 +63,7 @@ with open(path.join(setup_path, "requirements.txt"), "r") as f:
 setup(
     name="nifs",
     version=version,
-    url="http://kaiseki-dev.lhd.nifs.ac.jp/old/software/python/index.htm",
+    url="https://nifs-software.github.io/nifs-retrieve/",
     description="A package of modules for python to handle LHD experimetal data",
     license="BSD",
     classifiers=[
