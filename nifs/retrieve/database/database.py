@@ -1,4 +1,3 @@
-# -*- coding: utf-8
 import os.path as path
 import json
 import psycopg2
@@ -9,20 +8,19 @@ BASE = path.dirname(__file__)
 
 def get_connection():
     """Establish a new connection to Kaiseki-server.
+    If the connection is not established within 5 seconds,
+    ConnectionError is thrown.
 
     Returns
     -------
-    psycopg2.extensions.connection
+    :obj:`psycopg2.extensions.connection`
         connection object
     """
     # Load database config
     with open(path.join(BASE, "setting", "kaiseki.json"), "r") as f:
         config = json.load(f)
-    try:
-        db = psycopg2.connect(**config)
-        return db
-    except Exception:
-        ConnectionError("Failed to establish a new connection")
+
+    return psycopg2.connect(**config, connect_timeout=5)
 
 
 def get_current_shot_no():
@@ -59,6 +57,7 @@ def find_val_in_explog(shotno: int):
     Returns
     -------
     dict
+        vals at the specified shotnumber
     """
     vals = {}
     db = get_connection()
@@ -218,7 +217,6 @@ def find_val_in_lid_shotlog(shotno):
     Returns
     -------
     dict
-    説明
     """
     vals = {}
     db = get_connection()

@@ -1,8 +1,7 @@
-# -*- coding: utf-8 -*-
 import numpy
 from ._retrieve import retrieve as _retrieve
-from nifs.database import _dbstore
-from nifs.exceptions import RetrieveException, DBException
+from nifs.retrieve.database import _dbstore
+from nifs.retrieve.exceptions import RetrieveException, DBException
 
 VER = "$Id: rawdata.py,v 1.2 2020/07/15 02:59:48 yoshida Exp $"
 
@@ -18,7 +17,6 @@ DBSTORE_ANA_DATA = 2
 
 class RawData:
     """
-    [クラス名] RawData
     <メンバー>
       val (string) : 生データをstringで表現したもの
       params (dict) : 収集パラメタ

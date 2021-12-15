@@ -1,4 +1,3 @@
-# -*- coding: utf-8
 import os.path as path
 import json
 import psycopg2
@@ -9,20 +8,19 @@ BASE = path.dirname(__file__)
 
 def get_labcomconnection():
     """Establish a new connection to LABCOM.
+    If the connection is not established within 5 seconds,
+    ConnectionError is thrown.
 
     Returns
     -------
-    psycopg2.extensions.connection
+    :obj:`psycopg2.extensions.connection`
         connection object
     """
     # Load database config
     with open(path.join(BASE, "setting", "labcom.json"), "r") as f:
         config = json.load(f)
-    try:
-        db = psycopg2.connect(**config)
-        return db
-    except Exception:
-        raise ConnectionError("Failed to establish a new connection to LABCOM.")
+
+    return psycopg2.connect(**config, connect_timeout=5)
 
 
 def get_last_subshot_no(diag: str, shotno: int):

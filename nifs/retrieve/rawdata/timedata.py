@@ -1,31 +1,26 @@
-# -*- coding: utf-8 -*-
 import numpy as np
-from ._retrieve import retrieve as _retrieve
-from .rawdata import RawData
-from nifs.exceptions import RetrieveException
+from ._retrieve_t import retrieve as _retrieve
+from nifs.retrieve.exceptions import RetrieveException
 
-VER = "$Id: voltdata.py,v 1.2 2020/07/15 02:59:48 yoshida Exp $"
+VER = "$Id: timedata.py,v 1.2 2020/07/15 02:59:48 yoshida Exp $"
 
 
-class VoltData:
+class TimeData:
     """
-    [クラス名] VoltData
+    [クラス名] TimeData
     <メンバー>
     val (numpy.array(ndtype=float32) : 電圧データの配列(numpy.array)
-    params (dict) : 収集パラメタ
     <説明>
-    電圧データを保持するクラス
+    収集タイミングの配列データを保持するクラス
     """
 
-    def __init__(self, val, params):
+    def __init__(self, val):
         """
         [コンストラクタ]
         <引数>
-        val (string) : 電圧データ float32 の配列の文字列表現
-        params (dict) : 収集パラメタ
+        val (string) : 時刻 float32 の配列の文字列表現
         """
-        self.val = np.fromstring(val, np.float32)
-        self.params = params
+        self.val = np.fromstring(val, np.float64)
 
     def get_val(self):
         """
@@ -35,7 +30,7 @@ class VoltData:
         <返値>
           numpy.array の配列
         <説明>
-          データを int の配列(numpy.array)に変換して返す
+          データを float32 の配列(numpy.array)に変換して返す
         """
         return self.val
 
@@ -50,20 +45,18 @@ class VoltData:
           chNo (int) : チャンネル番号 (in)
           timeout (int ) : タイムアウト秒 (in)
         <返値>
-          電圧データ(VolData オブジェクト)
+          時刻配列データ(VolData オブジェクト)
         <説明>
           引数で指定されたショットを検索し、電圧データオブジェクトを返す
         """
-        list = []
         try:
-            val = _retrieve(diag, shotno, subno, channel, timeout, True, list)
-            params = RawData.build_hash(list)
-            data = VoltData(val, params)
+            val = _retrieve(diag, shotno, subno, channel, timeout)
+            data = TimeData(val)
             return data
         except Exception:
-            raise RetrieveException("Error occurred in _rerieve.retrieve")
+            raise RetrieveException("Error occurred in _rerieve_t.retrieve")
 
 
 if __name__ == "__main__":
-    data = VoltData.retrieve("Bolometer", 80000, 1, 1)
-    print((data.get_val()))
+    data = TimeData.retrieve("Bolometer", 80000, 1, 1)
+    print((data.val))

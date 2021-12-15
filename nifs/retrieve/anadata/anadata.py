@@ -1,24 +1,17 @@
 import traceback
 import xarray as xr
 from ._anadata import _AnaData
-from nifs.database import get_connection
+from nifs.retrieve.database import get_connection
 
 
 class AnaData:
     """
-    AnaData
-    =======
-
     class to handle analyzed data stored in analysis (kaiseki) server.
-    When retrieving or registering data to kaiseki server,
+    When retrieving data to kaiseki server,
     wrapper class :py:class:`_AnaData` which is implemeted in libana2 is used.
     Retrieved data is reconstructed as one dataset
     using `xarray package <http://xarray.pydata.org/>`_
 
-    .. todo::
-
-        the method of registering a xarray.Datset to kaiseki-server
-        has not been implemented yet.
 
     Parameters
     ----------
@@ -31,7 +24,7 @@ class AnaData:
     --------
     .. prompt:: python >>> auto
 
-        >>> from nifs.anadata import AnaData
+        >>> from nifs.retrieve.anadata import AnaData
         >>> # set (shot number: 80000, subshot number: 1) database
         >>> ana = AnaData(80000, 1)
     """
@@ -50,28 +43,28 @@ class AnaData:
 
     @property
     def shot_number(self) -> int:
-        """Shot number.
-
-        Returns
-        -------
-        int
+        """
+        int: Shot number.
         """
         return self._shot_number
 
     @property
-    def diagnostics_list(self) -> dict:
-        """Registered diagnostics names at a shot number.
+    def subshot(self) -> int:
+        """
+        int: sub-shot number
+        """
+        return self._subshot
 
-        Returns
-        -------
-        dict
-            {name: comment}
+    @property
+    def diagnostics_list(self) -> dict:
+        """
+        dict: Registered diagnostics names at a shot number and comments
 
         Examples
         --------
         .. prompt :: python >>> auto
 
-            >>> from nifs.anadata import AnaData
+            >>> from nifs.retrieve.anadata import AnaData
             >>> ana = AnaData(80000, 1)
             >>> ana.diagnostics_list
             {'ha1': 'Time behaviors of visible lines of Halpha and HeI',
@@ -105,10 +98,7 @@ class AnaData:
     def retrieve(self, diagnostics: str) -> xr.Dataset:
         """
         Retrieving analyzed data from kaiseki-server.
-        This method returns a xarray.Dataset object.
-        If you want to know about xarray, please see the xarray documentation:
-        http://xarray.pydata.org/.
-
+        This method returns a :obj:`xarray.Dataset` object.
 
         Parameters
         ----------
@@ -117,14 +107,14 @@ class AnaData:
 
         Returns
         -------
-        xarray.Dataset
+        :obj:`xarray.Dataset`
             dataset of a xarray object.
 
         Examples
         --------
         .. prompt :: python >>> auto
 
-            >>> from nifs.anadata import AnaData
+            >>> from nifs.retrieve.anadata import AnaData
             >>>
             >>> ana = AnaData(80000, 1)
             >>> # Retrieving dataset of thomson
@@ -156,10 +146,22 @@ class AnaData:
             ana.getValName(i): ([key for key in coords.keys()], ana.getValData(i), {"units": ana.getValUnit(i)})
             for i in range(val_num)
         }
-        attrs = {"diagnostics": diagnostics, "description": ana.getComment(), "shot_number": self._shot_number}
+
+        attrs = {
+            "diagnostics": diagnostics,
+            "description": ana.getComment(),
+            "shot_number": self._shot_number,
+            "shubshot_number": self._subshot
+        }
 
         ds = xr.Dataset(data_vars=data_vars, coords=coords, attrs=attrs)
         for i in range(dim_num):
             ds[ana.getDimName(i)].attrs["units"] = ana.getDimUnit(i)
 
         return ds
+
+
+# For debug
+if __name__ == "__main__":
+    ana = AnaData(80000, 1)
+    pass

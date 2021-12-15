@@ -3,7 +3,7 @@ import traceback
 import struct
 import select
 import time
-from nifs.database import chk_exist
+from nifs.retrieve.database import chk_exist
 
 MC_ADDR = "225.1.1.1"
 MC_PORT = 7001
@@ -140,7 +140,7 @@ class NewAnaData:
 
 
 if __name__ == "__main__":
-    import nifs.database
+    import nifs.retrieve.database
 
     no = nifs.database.get_current_shot_no()
     print(("no=", no))
