@@ -53,7 +53,7 @@ for package in source_paths:
                 )
 
 # parse the package version number
-with open(path.join(setup_path, "nifs", "VERSION")) as version_file:
+with open(path.join(setup_path, "nifs", "retrieve", "VERSION")) as version_file:
     version = version_file.read().strip()
 
 # parse the prerequisite python packages
@@ -61,7 +61,7 @@ with open(path.join(setup_path, "requirements.txt"), "r") as f:
     install_requires = f.read().strip("\n")
 
 setup(
-    name="nifs",
+    name="nifs-retrieve",
     version=version,
     url="https://nifs-software.github.io/nifs-retrieve/",
     description="A package of modules for python to handle LHD experimetal data",
@@ -79,6 +79,7 @@ setup(
         "Programming Language :: Python :: 3",
         "Topic :: Database :: Retrieve LHD experimental data"
     ],
+    zip_safe=False,
     install_requires=install_requires,
     packages=find_packages(),
     ext_modules=extensions,

@@ -21,3 +21,7 @@ help:
 
 html:
 	$(SPHINXBUILD) -b html $(SPHINXOPTS) $(SOURCEDIR) $(BUILDDIR)/html
+
+clean-html:
+	rm -rf $(BUILDDIR)/html
+	rm -rf api cache gen_modules __pycache

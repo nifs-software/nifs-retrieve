@@ -1,9 +1,6 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 import numpy as np
 import matplotlib.pyplot as plt
-from nifs.rawdata import RawData
+from nifs.retrieve.rawdata import RawData
 
 
 # Bolomgeter の ショット番号=48000, サブショット番号=1, チャンネル番号=1 のデータを取得

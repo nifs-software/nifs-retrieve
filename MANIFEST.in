@@ -1,0 +1,5 @@
+include README.md CHANGELOG.md LICENSE.txt MANIFEST.in setup.py requirements.txt .gitignore
+include nifs/retrieve/VERSION
+recursive-include nifs *.py *.json
+prune demos*
+prune docs/html

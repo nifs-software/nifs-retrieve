@@ -1,4 +1,4 @@
-from nifs.anadata import AnaData
+from nifs.retrieve.anadata import AnaData
 import matplotlib.pyplot as plt
 
 

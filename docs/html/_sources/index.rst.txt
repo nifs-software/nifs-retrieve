@@ -1,4 +1,4 @@
-.. nifs documentation master file, created by
+.. nifs-retrieve documentation master file, created by
    sphinx-quickstart on Sun Oct 24 12:04:38 2021.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
@@ -10,12 +10,12 @@
 Welcome
 =======
 
-Welcome to a NIFS package documentation.
-A nifs package facilitates to handle the LHD experimental data from 
+Welcome to a NIFS-retrieve package documentation.
+This package facilitates to handle the LHD experimental data from 
 labcom (raw data server) and kaiseki (analyzed) data server for python users.
 
-.. image:: demonstrations/main_waveplots.png
-   :align: center
+.. .. image:: demonstrations/main_waveplots.png
+..    :align: center
 
 
 .. toctree::
@@ -30,12 +30,12 @@ labcom (raw data server) and kaiseki (analyzed) data server for python users.
 
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
    :numbered:
-   :caption: Demonstrations
-   :name: demonstrations
+   :caption: Examples
+   :name: examples
 
-   demonstrations/demonstrations
+   examples
 
 
 .. toctree::
