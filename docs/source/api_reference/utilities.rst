@@ -4,5 +4,5 @@ Utilities
 Exceptions
 ----------
 
-.. automodule:: nifs.exceptions
+.. automodule:: nifs.retrieve.exceptions
     :members:

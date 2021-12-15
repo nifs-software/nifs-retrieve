@@ -2,30 +2,37 @@
 ============================
 Downloading and Installation
 ============================
-.. _Python Setup Tools:       http://pypi.python.org/pypi/setuptools
-.. _numpy:                    https://numpy.org
-.. _xarray:                   http://xarray.pydata.org
-.. _psycopg2:                 https://www.psycopg.org
-.. _matplotlib:               https://matplotlib.org
-.. _Retrieve-dbstore-SDK:     https://w3.lhd.nifs.ac.jp/LABCOM_Documents.htm
-.. _LABCOM Download page:     https://w3.lhd.nifs.ac.jp/en/LABCOM_Download-e.htm
-.. _libana2:                  http://kaiseki-dev.lhd.nifs.ac.jp/software/libana/index-e_new.htm
-.. _development repository:   https://github.com/nifs-lhd/nifs
+.. _NIFS-network:           https://www-net.nifs.ac.jp/network/index.html
+.. _Retrieve-dbstore-SDK:   https://w3.lhd.nifs.ac.jp/LABCOM_Documents.htm
+.. _LABCOM Download page:   https://w3.lhd.nifs.ac.jp/en/LABCOM_Download-e.htm
+.. _libana2:                http://kaiseki-dev.lhd.nifs.ac.jp/software/libana/index-e_new.htm
+.. _development repository: https://github.com/nifs-lhd/nifs
 
-Prerequisites
-=============
+.. note::
+    For now, to install the dependencies which are only accessible in the NIFS network,
+    The users need to have the acceess there. Please see the `NIFS-network`_ page and get some way like SSL-VPN.
+
+Requirements
+============
 The version python is assumed to be over 3.9+, and
-the nifs package requires some python packages: `numpy`_, `xarray`_, `psycopg2`_ and `matplotlib`_.
-IPython is recommended for interactive use.
+the nifs-retrieve package requires the following packages:
 
-In addition, C++ external libraries: retrieve-dbstore-SDK, libana2 have to be intalled in advance.
+* :obj:`numpy` >= 1.18
+* :obj:`xarray`
+* :obj:`psycopg2`
+* :obj:`matplotlib`
+
+:obj:`IPython` is recommended for the interactive use.
+
+In addition, C++ external libraries: `Retrieve-dbstore-SDK`_, `libana2`_
+have to be intalled in advance to build the nifs-retrieve package.
 The procedures of downloading and installation of which are discribed below at first.
 
 
 
 Retrieve-dbstore-SDK
 ~~~~~~~~~~~~~~~~~~~~~
-`Retrieve-dbstore-SDK`_ is required for :py:mod:`.nifs.rawdata` module to retrieve raw data from LABCOM server.
+`Retrieve-dbstore-SDK`_ is required for :ref:`rawdata<rawdata-module>` module to retrieve raw data from LABCOM server.
 This SDK is available from `LABCOM Download page`_
 or you can use ``wget`` command as follows:
 
@@ -46,14 +53,15 @@ Finaly, configure the following environmental values in .bashrc:
 
 
 If you would rather download the SDK from website directly, you must choose CentOS8 SDK
-whatever linux distribution your PC depends on. And replace path names in the above code line with your own setting.
+whatever linux distribution your PC depends on.
+And replace path names in the above code line with your own setting.
 
 
 
 libana2
 ~~~~~~~~
-`libana2`_ is a client library
-to use Kaiseki Server and experimental database. :py:mod:`.nifs.anadata` module requires this library.
+`libana2`_ is a client library to use Kaiseki Server and experimental database.
+:ref:`anadata<anadata-module>` module requires this library.
 The source files are availabe from a git server. You can download it by ``git`` command:
 
 .. prompt:: bash $
@@ -80,7 +88,9 @@ Configure the following environmental values in .bashrc:
     echo "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$LIBANA2_PREFIX/lib" >> ~/.bashrc
     source ~/.bashrc
 
-Make symbolic links of .client.ini and .client2.ini files which are stored in ~/kserver/kaiseki-client2 directory.
+Make symbolic links of .client.ini and .client2.ini files
+which are stored in ~/kserver/kaiseki-client2 directory.
+These files are written about the network information of Kiseki server.
 
 .. prompt:: bash $
 
@@ -92,7 +102,7 @@ Or you can put these files into $HOME directory directly.
 
 Installation
 ============
-NIFS package is available from our `development repository`_.
+NIFS-retrieve package is available from our `development repository`_.
 Once you have the source files, locate the foloder containing setup.py and run:
 
 .. prompt:: bash $
@@ -100,15 +110,16 @@ Once you have the source files, locate the foloder containing setup.py and run:
     python setup.py install
 
 If all the required dependencies are present,
-this should start the NIFS package compilation and installation process.
+this should start the NIFS-retrieve package compilation and installation process.
 
 .. warning:: 
 
-    Be sure to follow the above procedure of installing external C++ libraries before installing the NIFS package, otherwise, compilation errors
-    might occur.
+    Be sure to follow the above procedure of installing external C++ libraries
+    before installing the NIFS package, otherwise, compilation errors might occur.
 
 
-When developing NIFS package, it is usually preferred that the packages be installed in "develop" mode:
+When developing NIFS-retrieve package, it is usually preferred that
+the packages be installed in "develop" mode:
 
 .. prompt:: bash $
 
@@ -120,4 +131,5 @@ Modifications to the code will therefore be visible to python next time the code
 
 Testing
 ========
-Many of the demos used throughout the NIFS documentation are distributed with the source code in the ``demo`` folder.
+Examples and demos used throughout the NIFS-retrieve documentation are distributed with the source code in the ``demo`` folder or
+``docs/source/examples`` folder.

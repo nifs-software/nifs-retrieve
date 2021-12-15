@@ -1,75 +1,40 @@
-
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>3. Database module &mdash; NIFS Documentation</title>
-  
-
-  
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3. Database module &mdash; NIFS-retrieve Documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/sg_gallery.css" type="text/css" />
     <link rel="shortcut icon" href="../_static/logo_nifs.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
-  
-  
-
-  
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/theme.css" type="text/css" />
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="4. Experimental Seaquence Module" href="expseq.html" />
     <link rel="prev" title="2. Rawdata module" href="rawdata.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
-            <a href="../index.html" class="icon icon-home"> NIFS
-          
-
-          
+            <a href="../index.html" class="icon icon-home"> NIFS-retrieve
           </a>
-
-          
-            
-            
               <div class="version">
                 1.0
               </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -77,27 +42,16 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Table of Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">1. Downloading and Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../quickstart_guide.html">2. Quickstart Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart_guide.html">2. Quick Start Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references.html">3. References</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Demonstrations</span></p>
+<p class="caption" role="heading"><span class="caption-text">Examples</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../demonstrations/demonstrations.html">1. AnaData Functionality</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../demonstrations/demonstrations.html#rawdata-functionality">2. RawData Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">1. Examples</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
 <ul class="current">
@@ -108,320 +62,309 @@
 <li class="toctree-l1"><a class="reference internal" href="utilities.html">5. Utilities</a></li>
 </ul>
 
-            
-          
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">NIFS</a>
-        
+          <a href="../index.html">NIFS-retrieve</a>
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../index.html">Docs</a> &raquo;</li>
-        
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
       <li><span class="section-number">3. </span>Database module</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-            
             <a href="../_sources/api_reference/database.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <section id="database-module">
-<h1><span class="section-number">3. </span>Database module<a class="headerlink" href="#database-module" title="Permalink to this headline">¶</a></h1>
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="database-module">
+<span id="id1"></span><h1><span class="section-number">3. </span>Database module<a class="headerlink" href="#database-module" title="Permalink to this headline"></a></h1>
 <p>module for accessing to kaiseki- or LABCOM servers, obtaining experimental information, etc.</p>
-<span class="target" id="module-nifs.database.database"></span><dl class="py function">
-<dt class="sig sig-object py" id="nifs.database.database.chk_exist">
-<span class="sig-prename descclassname"><span class="pre">nifs.database.database.</span></span><span class="sig-name descname"><span class="pre">chk_exist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">diag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shotno</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subshot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nifs/database/database.html#chk_exist"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nifs.database.database.chk_exist" title="Permalink to this definition">¶</a></dt>
+<span class="target" id="module-nifs.retrieve.database.database"></span><dl class="py function">
+<dt class="sig sig-object py" id="nifs.retrieve.database.database.chk_exist">
+<span class="sig-prename descclassname"><span class="pre">nifs.retrieve.database.database.</span></span><span class="sig-name descname"><span class="pre">chk_exist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">diag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shotno</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subshot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nifs.retrieve.database.database.chk_exist" title="Permalink to this definition"></a></dt>
 <dd><p>seigyo.lid_shotlog から対応するショット番号のlidデータを取得する。
 LID計算機とのファイル共有の問題が解決されないままとなっているため、現状ではデータを取得できない。
 (しばらく舟場データを使用する 2013.10.21)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>diag</strong> (<em>str</em>) – diagnostics name</p></li>
-<li><p><strong>shotno</strong> (<em>int</em>) – shot number</p></li>
-<li><p><strong>subshot</strong> (<em>int</em>) – sub-shot number</p></li>
+<li><p><strong>diag</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – diagnostics name</p></li>
+<li><p><strong>shotno</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – shot number</p></li>
+<li><p><strong>subshot</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – sub-shot number</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p></p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)">dict</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="nifs.database.database.find_last_theme_in_exp_comment">
-<span class="sig-prename descclassname"><span class="pre">nifs.database.database.</span></span><span class="sig-name descname"><span class="pre">find_last_theme_in_exp_comment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shotno</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nifs/database/database.html#find_last_theme_in_exp_comment"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nifs.database.database.find_last_theme_in_exp_comment" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="nifs.retrieve.database.database.find_last_theme_in_exp_comment">
+<span class="sig-prename descclassname"><span class="pre">nifs.retrieve.database.database.</span></span><span class="sig-name descname"><span class="pre">find_last_theme_in_exp_comment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shotno</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nifs.retrieve.database.database.find_last_theme_in_exp_comment" title="Permalink to this definition"></a></dt>
 <dd><p>exp_comment から対応する直近のショット番号の実験テーマを取得する。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>shotno</strong> (<em>int</em>) – shot number</p>
+<dd class="field-odd"><p><strong>shotno</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – shot number</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p></p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)">dict</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="nifs.database.database.find_last_val_in_exp_comment">
-<span class="sig-prename descclassname"><span class="pre">nifs.database.database.</span></span><span class="sig-name descname"><span class="pre">find_last_val_in_exp_comment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shotno</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nifs/database/database.html#find_last_val_in_exp_comment"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nifs.database.database.find_last_val_in_exp_comment" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="nifs.retrieve.database.database.find_last_val_in_exp_comment">
+<span class="sig-prename descclassname"><span class="pre">nifs.retrieve.database.database.</span></span><span class="sig-name descname"><span class="pre">find_last_val_in_exp_comment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shotno</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nifs.retrieve.database.database.find_last_val_in_exp_comment" title="Permalink to this definition"></a></dt>
 <dd><p>exp_comment から対応する直近のショット番号のデータを取得する。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>shotno</strong> (<em>int</em>) – shot number</p>
+<dd class="field-odd"><p><strong>shotno</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – shot number</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p></p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)">dict</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="nifs.database.database.find_last_wallcondition_in_exp_comment">
-<span class="sig-prename descclassname"><span class="pre">nifs.database.database.</span></span><span class="sig-name descname"><span class="pre">find_last_wallcondition_in_exp_comment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shotno</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nifs/database/database.html#find_last_wallcondition_in_exp_comment"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nifs.database.database.find_last_wallcondition_in_exp_comment" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="nifs.retrieve.database.database.find_last_wallcondition_in_exp_comment">
+<span class="sig-prename descclassname"><span class="pre">nifs.retrieve.database.database.</span></span><span class="sig-name descname"><span class="pre">find_last_wallcondition_in_exp_comment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shotno</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nifs.retrieve.database.database.find_last_wallcondition_in_exp_comment" title="Permalink to this definition"></a></dt>
 <dd><p>exp_comment から対応する直近のショット番号の壁状態を取得する。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>shotno</strong> (<em>int</em>) – shot number</p>
+<dd class="field-odd"><p><strong>shotno</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – shot number</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p></p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)">dict</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="nifs.database.database.find_val_in_exp_comment">
-<span class="sig-prename descclassname"><span class="pre">nifs.database.database.</span></span><span class="sig-name descname"><span class="pre">find_val_in_exp_comment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shotno</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nifs/database/database.html#find_val_in_exp_comment"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nifs.database.database.find_val_in_exp_comment" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="nifs.retrieve.database.database.find_val_in_exp_comment">
+<span class="sig-prename descclassname"><span class="pre">nifs.retrieve.database.database.</span></span><span class="sig-name descname"><span class="pre">find_val_in_exp_comment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shotno</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nifs.retrieve.database.database.find_val_in_exp_comment" title="Permalink to this definition"></a></dt>
 <dd><p>exp_comment から対応するショット番号のデータを取得する。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>shotno</strong> (<em>int</em>) – shot number</p>
+<dd class="field-odd"><p><strong>shotno</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – shot number</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p></p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)">dict</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="nifs.database.database.find_val_in_explog">
-<span class="sig-prename descclassname"><span class="pre">nifs.database.database.</span></span><span class="sig-name descname"><span class="pre">find_val_in_explog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shotno</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nifs/database/database.html#find_val_in_explog"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nifs.database.database.find_val_in_explog" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="nifs.retrieve.database.database.find_val_in_explog">
+<span class="sig-prename descclassname"><span class="pre">nifs.retrieve.database.database.</span></span><span class="sig-name descname"><span class="pre">find_val_in_explog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shotno</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nifs.retrieve.database.database.find_val_in_explog" title="Permalink to this definition"></a></dt>
 <dd><p>explog2 から対応するショット番号のデータを取得する。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>shotno</strong> (<em>int</em>) – shot number</p>
+<dd class="field-odd"><p><strong>shotno</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – shot number</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p></p>
+<dd class="field-even"><p>vals at the specified shotnumber</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)">dict</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="nifs.database.database.find_val_in_gas_shotlog">
-<span class="sig-prename descclassname"><span class="pre">nifs.database.database.</span></span><span class="sig-name descname"><span class="pre">find_val_in_gas_shotlog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shotno</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nifs/database/database.html#find_val_in_gas_shotlog"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nifs.database.database.find_val_in_gas_shotlog" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="nifs.retrieve.database.database.find_val_in_gas_shotlog">
+<span class="sig-prename descclassname"><span class="pre">nifs.retrieve.database.database.</span></span><span class="sig-name descname"><span class="pre">find_val_in_gas_shotlog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shotno</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nifs.retrieve.database.database.find_val_in_gas_shotlog" title="Permalink to this definition"></a></dt>
 <dd><p>seigyo.gas_shotlog, seigyo.gas_name から対応するショット番号の gasデータを取得する。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>shotno</strong> (<em>int</em>) – shot number</p>
+<dd class="field-odd"><p><strong>shotno</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – shot number</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p></p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)">dict</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="nifs.database.database.find_val_in_lid_shotlog">
-<span class="sig-prename descclassname"><span class="pre">nifs.database.database.</span></span><span class="sig-name descname"><span class="pre">find_val_in_lid_shotlog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shotno</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nifs/database/database.html#find_val_in_lid_shotlog"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nifs.database.database.find_val_in_lid_shotlog" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="nifs.retrieve.database.database.find_val_in_lid_shotlog">
+<span class="sig-prename descclassname"><span class="pre">nifs.retrieve.database.database.</span></span><span class="sig-name descname"><span class="pre">find_val_in_lid_shotlog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shotno</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nifs.retrieve.database.database.find_val_in_lid_shotlog" title="Permalink to this definition"></a></dt>
 <dd><p>seigyo.lid_shotlog から対応するショット番号のlidデータを取得する。
 LID計算機とのファイル共有の問題が解決されないままとなっているため、現状ではデータを取得できない。
 しばらく舟場データを使用する）2013.10.21</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>shotno</strong> (<em>int</em>) – shot number</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><ul class="simple">
-<li><p><em>dict</em></p></li>
-<li><p><em>説明</em></p></li>
-</ul>
-</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="nifs.database.database.find_val_in_shot_time">
-<span class="sig-prename descclassname"><span class="pre">nifs.database.database.</span></span><span class="sig-name descname"><span class="pre">find_val_in_shot_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shotno</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nifs/database/database.html#find_val_in_shot_time"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nifs.database.database.find_val_in_shot_time" title="Permalink to this definition">¶</a></dt>
-<dd><p>explog2 から対応するショット番号のデータ作成時間を取得する。
-2011/10/06 t=0に変更 制御の seigyo.plc_shotlog l3ontimeとする</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>shotno</strong> (<em>int</em>) – shot number</p>
+<dd class="field-odd"><p><strong>shotno</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – shot number</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p></p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)">dict</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="nifs.database.database.get_connection">
-<span class="sig-prename descclassname"><span class="pre">nifs.database.database.</span></span><span class="sig-name descname"><span class="pre">get_connection</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nifs/database/database.html#get_connection"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nifs.database.database.get_connection" title="Permalink to this definition">¶</a></dt>
-<dd><p>Establish a new connection to Kaiseki-server.</p>
+<dt class="sig sig-object py" id="nifs.retrieve.database.database.find_val_in_shot_time">
+<span class="sig-prename descclassname"><span class="pre">nifs.retrieve.database.database.</span></span><span class="sig-name descname"><span class="pre">find_val_in_shot_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shotno</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nifs.retrieve.database.database.find_val_in_shot_time" title="Permalink to this definition"></a></dt>
+<dd><p>explog2 から対応するショット番号のデータ作成時間を取得する。
+2011/10/06 t=0に変更 制御の seigyo.plc_shotlog l3ontimeとする</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>shotno</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – shot number</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="nifs.retrieve.database.database.get_connection">
+<span class="sig-prename descclassname"><span class="pre">nifs.retrieve.database.database.</span></span><span class="sig-name descname"><span class="pre">get_connection</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nifs.retrieve.database.database.get_connection" title="Permalink to this definition"></a></dt>
+<dd><p>Establish a new connection to Kaiseki-server.
+If the connection is not established within 5 seconds,
+ConnectionError is thrown.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>connection object</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p>psycopg2.extensions.connection</p>
+<dd class="field-even"><p><a class="reference external" href="https://www.psycopg.org/docs/extensions.html#psycopg2.extensions.connection" title="(in Psycopg v2.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">psycopg2.extensions.connection</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="nifs.database.database.get_current_shot_no">
-<span class="sig-prename descclassname"><span class="pre">nifs.database.database.</span></span><span class="sig-name descname"><span class="pre">get_current_shot_no</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nifs/database/database.html#get_current_shot_no"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nifs.database.database.get_current_shot_no" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="nifs.retrieve.database.database.get_current_shot_no">
+<span class="sig-prename descclassname"><span class="pre">nifs.retrieve.database.database.</span></span><span class="sig-name descname"><span class="pre">get_current_shot_no</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nifs.retrieve.database.database.get_current_shot_no" title="Permalink to this definition"></a></dt>
 <dd><p>データベースから最新ショット番号を検索し返す</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>latest shot number</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p>int</p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)">int</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="nifs.database.database.set_last_theme_in_exp_comment">
-<span class="sig-prename descclassname"><span class="pre">nifs.database.database.</span></span><span class="sig-name descname"><span class="pre">set_last_theme_in_exp_comment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shotno</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theme</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nifs/database/database.html#set_last_theme_in_exp_comment"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nifs.database.database.set_last_theme_in_exp_comment" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="nifs.retrieve.database.database.set_last_theme_in_exp_comment">
+<span class="sig-prename descclassname"><span class="pre">nifs.retrieve.database.database.</span></span><span class="sig-name descname"><span class="pre">set_last_theme_in_exp_comment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shotno</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theme</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nifs.retrieve.database.database.set_last_theme_in_exp_comment" title="Permalink to this definition"></a></dt>
 <dd><p>指定されたショット番号に実験テーマを設定する。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>shotno</strong> (<em>int</em>) – shot number</p></li>
-<li><p><strong>theme</strong> (<em>str</em>) – experiment theme description</p></li>
+<li><p><strong>shotno</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – shot number</p></li>
+<li><p><strong>theme</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – experiment theme description</p></li>
 </ul>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="nifs.database.database.set_last_wallcondition_in_exp_comment">
-<span class="sig-prename descclassname"><span class="pre">nifs.database.database.</span></span><span class="sig-name descname"><span class="pre">set_last_wallcondition_in_exp_comment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shotno</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wall</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nifs/database/database.html#set_last_wallcondition_in_exp_comment"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nifs.database.database.set_last_wallcondition_in_exp_comment" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="nifs.retrieve.database.database.set_last_wallcondition_in_exp_comment">
+<span class="sig-prename descclassname"><span class="pre">nifs.retrieve.database.database.</span></span><span class="sig-name descname"><span class="pre">set_last_wallcondition_in_exp_comment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shotno</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">wall</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nifs.retrieve.database.database.set_last_wallcondition_in_exp_comment" title="Permalink to this definition"></a></dt>
 <dd><p>指定されたショット番号に壁状態を設定する。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>shotno</strong> (<em>int</em>) – shot number</p></li>
-<li><p><strong>wall</strong> (<em>str</em>) – description of wall condition</p></li>
+<li><p><strong>shotno</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – shot number</p></li>
+<li><p><strong>wall</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – description of wall condition</p></li>
 </ul>
 </dd>
 </dl>
 </dd></dl>
 
-<span class="target" id="module-nifs.database.labcomdatabase"></span><dl class="py function">
-<dt class="sig sig-object py" id="nifs.database.labcomdatabase.get_labcomconnection">
-<span class="sig-prename descclassname"><span class="pre">nifs.database.labcomdatabase.</span></span><span class="sig-name descname"><span class="pre">get_labcomconnection</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nifs/database/labcomdatabase.html#get_labcomconnection"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nifs.database.labcomdatabase.get_labcomconnection" title="Permalink to this definition">¶</a></dt>
-<dd><p>Establish a new connection to LABCOM.</p>
+<span class="target" id="module-nifs.retrieve.database.labcomdatabase"></span><dl class="py function">
+<dt class="sig sig-object py" id="nifs.retrieve.database.labcomdatabase.get_labcomconnection">
+<span class="sig-prename descclassname"><span class="pre">nifs.retrieve.database.labcomdatabase.</span></span><span class="sig-name descname"><span class="pre">get_labcomconnection</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nifs.retrieve.database.labcomdatabase.get_labcomconnection" title="Permalink to this definition"></a></dt>
+<dd><p>Establish a new connection to LABCOM.
+If the connection is not established within 5 seconds,
+ConnectionError is thrown.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>connection object</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p>psycopg2.extensions.connection</p>
+<dd class="field-even"><p><a class="reference external" href="https://www.psycopg.org/docs/extensions.html#psycopg2.extensions.connection" title="(in Psycopg v2.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">psycopg2.extensions.connection</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="nifs.database.labcomdatabase.get_last_subshot_no">
-<span class="sig-prename descclassname"><span class="pre">nifs.database.labcomdatabase.</span></span><span class="sig-name descname"><span class="pre">get_last_subshot_no</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">diag</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shotno</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nifs/database/labcomdatabase.html#get_last_subshot_no"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nifs.database.labcomdatabase.get_last_subshot_no" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="nifs.retrieve.database.labcomdatabase.get_last_subshot_no">
+<span class="sig-prename descclassname"><span class="pre">nifs.retrieve.database.labcomdatabase.</span></span><span class="sig-name descname"><span class="pre">get_last_subshot_no</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">diag</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">shotno</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nifs.retrieve.database.labcomdatabase.get_last_subshot_no" title="Permalink to this definition"></a></dt>
 <dd><p>指定された計測名、ショット番号の最後のサブショット番号を取得する。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>diag</strong> (<em>int</em>) – name of diagnostics</p></li>
-<li><p><strong>shotno</strong> (<em>int</em>) – shot number</p></li>
+<li><p><strong>diag</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – name of diagnostics</p></li>
+<li><p><strong>shotno</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – shot number</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>sub-shot number</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>int</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)">int</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -430,51 +373,33 @@ LID計算機とのファイル共有の問題が解決されないままとな�
 
 
            </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="expseq.html" class="btn btn-neutral float-right" title="4. Experimental Seaquence Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="rawdata.html" class="btn btn-neutral float-left" title="2. Rawdata module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="rawdata.html" class="btn btn-neutral float-left" title="2. Rawdata module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="expseq.html" class="btn btn-neutral float-right" title="4. Experimental Seaquence Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &copy; Copyright 2021, Koyo Munechika
-
-    </p>
+    <p>&#169; Copyright 2021-2021, Koyo Munechika.</p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

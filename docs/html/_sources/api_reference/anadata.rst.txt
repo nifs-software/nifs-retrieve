@@ -1,15 +1,13 @@
 
-
-.. _libana2: http://kaiseki-dev.lhd.nifs.ac.jp/software/libana/index-e_new.htm
+.. _anadata-module:
 
 Anadata module
 ===============
 
 This module can handle the analyzed data stored in Kaiseki server.
-(retrieving, registering, etc.)
-Retrieving method is implemeted in C++ modules (`libana2`_), and retrieved dataset
-uses a ``xarray.Dataset``.
+Retrieving method is implemeted in C++ modules (`libana2`), and retrieved dataset
+uses a :obj:`xarray.Dataset`.
 
 
-.. automodule:: nifs.anadata
+.. automodule:: nifs.retrieve.anadata
     :members:
