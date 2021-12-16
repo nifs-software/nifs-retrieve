@@ -20,27 +20,17 @@ labcom (raw data server) and kaiseki (analyzed) data server for python users.
 
 .. toctree::
    :maxdepth: 2
-   :numbered:
    :caption: Table of Contents:
    :name: mastertoc
 
    installation
    quickstart_guide
+   examples
    references
 
 
 .. toctree::
-   :maxdepth: 2
-   :numbered:
-   :caption: Examples
-   :name: examples
-
-   examples
-
-
-.. toctree::
    :maxdepth: 3
-   :numbered:
    :caption: API Reference
    :name: apireferenceto
 
