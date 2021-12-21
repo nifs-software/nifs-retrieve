@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home &mdash; NIFS-retrieve Documentation</title>
+  <title>1. Quick Installation with Docker &mdash; NIFS-retrieve Documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/sg_gallery.css" type="text/css" />
@@ -21,7 +21,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. Quick Installation with Docker" href="docker.html" /> 
+    <link rel="next" title="2. Downloading and Installation" href="installation.html" />
+    <link rel="prev" title="Welcome" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -29,7 +30,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="#" class="icon icon-home"> NIFS-retrieve
+            <a href="index.html" class="icon icon-home"> NIFS-retrieve
           </a>
               <div class="version">
                 1.0
@@ -43,8 +44,12 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Table of Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="docker.html">1. Quick Installation with Docker</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Quick Installation with Docker</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#docker-image">1.1. docker image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#jupyter-notebook-using-docker-image">1.2. Jupyter notebook using docker image</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">2. Downloading and Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quickstart_guide.html">3. Quick Start Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html">4. References</a></li>
@@ -68,17 +73,17 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">NIFS-retrieve</a>
+          <a href="index.html">NIFS-retrieve</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
-      <li>Home</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><span class="section-number">1. </span>Quick Installation with Docker</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/docker.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -110,74 +115,56 @@
     text-align: unset;
 }
 </style>
-<section id="welcome">
-<h1>Welcome<a class="headerlink" href="#welcome" title="Permalink to this headline"></a></h1>
-<p>Welcome to a NIFS-retrieve package documentation.
-This package facilitates to handle the LHD experimental data from
-labcom (raw data server) and kaiseki (analyzed) data server for python users.</p>
-<div class="toctree-wrapper compound" id="mastertoc">
-<p class="caption" role="heading"><span class="caption-text">Table of Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="docker.html">1. Quick Installation with Docker</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="docker.html#docker-image">1.1. docker image</a></li>
-<li class="toctree-l2"><a class="reference internal" href="docker.html#jupyter-notebook-using-docker-image">1.2. Jupyter notebook using docker image</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">2. Downloading and Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#requirements">2.1. Requirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#installation">2.2. Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#testing">2.3. Testing</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="quickstart_guide.html">3. Quick Start Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="quickstart_guide.html#Retrieve-Analyzed-Data">3.1. Retrieve Analyzed Data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="quickstart_guide.html#Retrieve-Raw-Data">3.2. Retrieve Raw Data</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="references.html">4. References</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="references.html#websites">4.1. Websites</a></li>
-</ul>
-</li>
-</ul>
+<section id="quick-installation-with-docker">
+<h1><span class="section-number">1. </span>Quick Installation with Docker<a class="headerlink" href="#quick-installation-with-docker" title="Permalink to this headline"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For now, to use full functionalities, it is required to have the access to NIFS-LAN.
+Please see the <a class="reference external" href="https://www-net.nifs.ac.jp/network/index.htm">NIFS-network</a> page and get some way like SSL-VPN, and go down to the below section
+after connecting to the NIFS-LAN.</p>
 </div>
-<div class="toctree-wrapper compound" id="examples">
-<p class="caption" role="heading"><span class="caption-text">Examples</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="examples.html">1. Examples</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="examples.html#anadata-functionality">1.1. AnaData Functionality</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples.html#rawdata-functionality">1.2. RawData Functionality</a></li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="toctree-wrapper compound" id="apireferenceto">
-<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="api_reference/anadata.html">1. Anadata module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api_reference/rawdata.html">2. Rawdata module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api_reference/database.html">3. Database module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api_reference/expseq.html">4. Experimental Seaquence Module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api_reference/utilities.html">5. Utilities</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="api_reference/utilities.html#module-nifs.retrieve.exceptions">5.1. Exceptions</a></li>
-</ul>
-</li>
-</ul>
-</div>
+<section id="docker-image">
+<h2><span class="section-number">1.1. </span>docker image<a class="headerlink" href="#docker-image" title="Permalink to this headline"></a></h2>
+<p>The easiest way to use thie package without downloding and installing
+any other dependencies is to use <a class="reference external" href="https://docs.docker.com">docker</a> image.
+How to download and install docker is available at <a class="reference external" href="https://docs.docker.com/get-docker/">https://docs.docker.com/get-docker/</a>.
+The built docker image for NIFS-retrieve is available at <a class="reference external" href="https://hub.docker.com/r/koyom/nifs-retrieve">here</a>.</p>
+<p>After installing the docker, the following command allows the user to create and enter the container:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "$ ";
+}
+</style><span class="prompt1">docker run --rm -it  koyom/nifs-retrieve</span>
+</pre></div></div><p>Afterwards, if starting up the python (or iPython) interpreter, users can load <code class="xref py py-obj docutils literal notranslate"><span class="pre">nifs.retrieve</span></code> module.</p>
 </section>
-<section id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline"></a></h1>
-<ul class="simple">
-<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
-<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
-<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
-</ul>
+<section id="jupyter-notebook-using-docker-image">
+<h2><span class="section-number">1.2. </span>Jupyter notebook using docker image<a class="headerlink" href="#jupyter-notebook-using-docker-image" title="Permalink to this headline"></a></h2>
+<p>For users who want to try this package, touching example notebooks is the best way.
+To try to use this, plase download the source files from our <a class="reference external" href="https://github.com/nifs-software/nifs-retrieve">development repository</a>.
+If you have installed the git, using the following command is also available:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git clone https://github.com/nifs-software/nifs-retrieve</span>
+</pre></div></div><p>Once you have the source files, locate the foloder containing <code class="xref py py-obj docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> file,
+and run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">docker-compose up -d</span>
+</pre></div></div><p>Then, the jupyter server has automatically started in the container, and the user has now access
+to <a class="reference external" href="http://localhost:8888/">http://localhost:8888/</a> in your browser.</p>
+<figure class="align-center" id="id1">
+<img alt="_images/jupyter_notebook.png" src="_images/jupyter_notebook.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Caption</strong> connecting to jupyter notebook after running the docker container</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The following command terminates the docker proccess:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">docker-compose down</span>
+</pre></div></div></section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="docker.html" class="btn btn-neutral float-right" title="1. Quick Installation with Docker" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="installation.html" class="btn btn-neutral float-right" title="2. Downloading and Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
