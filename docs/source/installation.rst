@@ -6,7 +6,7 @@ Downloading and Installation
 .. _Retrieve-dbstore-SDK:   https://w3.lhd.nifs.ac.jp/LABCOM_Documents.htm
 .. _LABCOM Download page:   https://w3.lhd.nifs.ac.jp/en/LABCOM_Download-e.htm
 .. _libana2:                http://kaiseki-dev.lhd.nifs.ac.jp/software/libana/index-e_new.htm
-.. _development repository: https://github.com/nifs-lhd/nifs
+.. _development repository: https://github.com/nifs-software/nifs-retrieve
 
 .. note::
     For now, to install the dependencies which are only accessible in the NIFS network,
@@ -27,7 +27,8 @@ the nifs-retrieve package requires the following packages:
 In addition, C++ external libraries: `Retrieve-dbstore-SDK`_, `libana2`_
 have to be intalled in advance to build the nifs-retrieve package.
 The procedures of downloading and installation of which are discribed below at first.
-
+The user who prefers to try NIFS-retrieve quickly can use the dokcer image.
+Plese see :doc:`here <docker>`.
 
 
 Retrieve-dbstore-SDK
