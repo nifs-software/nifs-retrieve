@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Downloading and Installation &mdash; NIFS-retrieve Documentation</title>
+  <title>2. Downloading and Installation &mdash; NIFS-retrieve Documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/sg_gallery.css" type="text/css" />
@@ -21,8 +21,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Quick Start Guide" href="quickstart_guide.html" />
-    <link rel="prev" title="Welcome" href="index.html" /> 
+    <link rel="next" title="3. Quick Start Guide" href="quickstart_guide.html" />
+    <link rel="prev" title="1. Quick Installation with Docker" href="docker.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -45,19 +45,23 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Table of Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Downloading and Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">Retrieve-dbstore-SDK</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">libana2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker.html">1. Quick Installation with Docker</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Downloading and Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#requirements">2.1. Requirements</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">2.1.1. Retrieve-dbstore-SDK</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">2.1.2. libana2</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#testing">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation">2.2. Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#testing">2.3. Testing</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="quickstart_guide.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart_guide.html">3. Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">4. References</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
 <ul>
@@ -82,7 +86,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Downloading and Installation</li>
+      <li><span class="section-number">2. </span>Downloading and Installation</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/installation.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -117,14 +121,14 @@
 }
 </style>
 <section id="downloading-and-installation">
-<h1>Downloading and Installation<a class="headerlink" href="#downloading-and-installation" title="Permalink to this headline"></a></h1>
+<h1><span class="section-number">2. </span>Downloading and Installation<a class="headerlink" href="#downloading-and-installation" title="Permalink to this headline"></a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>For now, to install the dependencies which are only accessible in the NIFS network,
 The users need to have the acceess there. Please see the <a class="reference external" href="https://www-net.nifs.ac.jp/network/index.html">NIFS-network</a> page and get some way like SSL-VPN.</p>
 </div>
 <section id="requirements">
-<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">2.1. </span>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline"></a></h2>
 <p>The version python is assumed to be over 3.9+, and
 the nifs-retrieve package requires the following packages:</p>
 <ul class="simple">
@@ -136,9 +140,11 @@ the nifs-retrieve package requires the following packages:</p>
 <p><a class="reference external" href="https://ipython.readthedocs.io/en/stable/api/generated/IPython.html#module-IPython" title="(in IPython v7.30.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IPython</span></code></a> is recommended for the interactive use.</p>
 <p>In addition, C++ external libraries: <a class="reference external" href="https://w3.lhd.nifs.ac.jp/LABCOM_Documents.htm">Retrieve-dbstore-SDK</a>, <a class="reference external" href="http://kaiseki-dev.lhd.nifs.ac.jp/software/libana/index-e_new.htm">libana2</a>
 have to be intalled in advance to build the nifs-retrieve package.
-The procedures of downloading and installation of which are discribed below at first.</p>
+The procedures of downloading and installation of which are discribed below at first.
+The user who prefers to try NIFS-retrieve quickly can use the dokcer image.
+Plese see <a class="reference internal" href="docker.html"><span class="doc">here</span></a>.</p>
 <section id="id1">
-<h3>Retrieve-dbstore-SDK<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">2.1.1. </span>Retrieve-dbstore-SDK<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h3>
 <p><a class="reference external" href="https://w3.lhd.nifs.ac.jp/LABCOM_Documents.htm">Retrieve-dbstore-SDK</a> is required for <a class="reference internal" href="api_reference/rawdata.html#rawdata-module"><span class="std std-ref">rawdata</span></a> module to retrieve raw data from LABCOM server.
 This SDK is available from <a class="reference external" href="https://w3.lhd.nifs.ac.jp/en/LABCOM_Download-e.htm">LABCOM Download page</a>
 or you can use <code class="docutils literal notranslate"><span class="pre">wget</span></code> command as follows:</p>
@@ -159,7 +165,7 @@ whatever linux distribution your PC depends on.
 And replace path names in the above code line with your own setting.</p>
 </section>
 <section id="id2">
-<h3>libana2<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">2.1.2. </span>libana2<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h3>
 <p><a class="reference external" href="http://kaiseki-dev.lhd.nifs.ac.jp/software/libana/index-e_new.htm">libana2</a> is a client library to use Kaiseki Server and experimental database.
 <a class="reference internal" href="api_reference/anadata.html#anadata-module"><span class="std std-ref">anadata</span></a> module requires this library.
 The source files are availabe from a git server. You can download it by <code class="docutils literal notranslate"><span class="pre">git</span></code> command:</p>
@@ -183,8 +189,8 @@ These files are written about the network information of Kiseki server.</p>
 </section>
 </section>
 <section id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline"></a></h2>
-<p>NIFS-retrieve package is available from our <a class="reference external" href="https://github.com/nifs-lhd/nifs">development repository</a>.
+<h2><span class="section-number">2.2. </span>Installation<a class="headerlink" href="#installation" title="Permalink to this headline"></a></h2>
+<p>NIFS-retrieve package is available from our <a class="reference external" href="https://github.com/nifs-software/nifs-retrieve">development repository</a>.
 Once you have the source files, locate the foloder containing setup.py and run:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">python setup.py install</span>
 </pre></div></div><p>If all the required dependencies are present,
@@ -201,7 +207,7 @@ the packages be installed in “develop” mode:</p>
 Modifications to the code will therefore be visible to python next time the code is imported.</p>
 </section>
 <section id="testing">
-<h2>Testing<a class="headerlink" href="#testing" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">2.3. </span>Testing<a class="headerlink" href="#testing" title="Permalink to this headline"></a></h2>
 <p>Examples and demos used throughout the NIFS-retrieve documentation are distributed with the source code in the <code class="docutils literal notranslate"><span class="pre">demo</span></code> folder or
 <code class="docutils literal notranslate"><span class="pre">docs/source/examples</span></code> folder.</p>
 </section>
@@ -211,8 +217,8 @@ Modifications to the code will therefore be visible to python next time the code
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="Welcome" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="quickstart_guide.html" class="btn btn-neutral float-right" title="Quick Start Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="docker.html" class="btn btn-neutral float-left" title="1. Quick Installation with Docker" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="quickstart_guide.html" class="btn btn-neutral float-right" title="3. Quick Start Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
