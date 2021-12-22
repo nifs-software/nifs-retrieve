@@ -39,7 +39,7 @@ If you have installed the git, using the following command is also available:
 
     git clone https://github.com/nifs-software/nifs-retrieve
 
-Once you have the source files, locate the foloder containing `docker-compose.yml` file,
+Once you have the source files, locate the foloder containing ``docker-compose.yml`` file,
 and run:
 
 .. prompt:: bash $
@@ -47,9 +47,9 @@ and run:
     docker-compose up -d
 
 Then, the jupyter server has automatically started in the container, and the user has now access
-to http://localhost:8888/ in your browser.
+to http://localhost:8888/ in your browser, where some example notebooks are available.
 
-.. figure:: _static/images/jupyter_notebook.png
+.. figure:: _static/images/nifs_retrieve_docker.gif
     :align: center
     
     **Caption** connecting to jupyter notebook after running the docker container

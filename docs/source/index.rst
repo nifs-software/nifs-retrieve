@@ -32,7 +32,6 @@ labcom (raw data server) and kaiseki (analyzed) data server for python users.
 
 .. toctree::
    :maxdepth: 2
-   :numbered:
    :caption: Examples
    :name: examples
 
