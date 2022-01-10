@@ -62,6 +62,7 @@ with open(path.join(setup_path, "requirements.txt"), "r") as f:
 
 setup(
     name="nifs-retrieve",
+    namespace_packages=["nifs"],
     version=version,
     url="https://nifs-software.github.io/nifs-retrieve/",
     description="A package of modules for python to handle LHD experimetal data",
